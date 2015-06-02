@@ -7,21 +7,23 @@
     <title>Cocoapods开源界的利器 | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。扩展阅读：http://nshipster.cn/cocoapods/">
+    <meta name="description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。
+扩展阅读：http://nshipster.cn/cocoapods/
+一、安装CocoapodsCocoapods用Ruby实现，所以我们必须有Ruby的环境。OS S系统默认自带了Ruby运行环境，但万一你的Ruby">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cocoapods开源界的利器">
 <meta property="og:url" content="http://dowhile.net/2015/02/12/swiftcocoapods/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。扩展阅读：http://nshipster.cn/cocoapods/">
-<meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/music1.jpg">
+<meta property="og:description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。
+扩展阅读：http://nshipster.cn/cocoapods/
+一、安装CocoapodsCocoapods用Ruby实现，所以我们必须有Ruby的环境。OS S系统默认自带了Ruby运行环境，但万一你的Ruby">
 <meta property="og:image" content="http://yangxiaolei.qiniudn.com/QQ20150212-2@2x.png">
-<meta property="og:image" content="http://yangxiaolei.qiniudn.com/QQ20150212-4@2x.png">
-<meta property="og:image" content="http://yangxiaolei.qiniudn.com/QQ20150212-5@2x.png">
-<meta property="og:image" content="http://yangxiaolei.qiniudn.com/QQ20150212-6@2x.png">
-<meta property="og:updated_time" content="2015-06-02T15:41:59.000Z">
+<meta property="og:updated_time" content="2015-06-02T15:59:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocoapods开源界的利器">
-<meta name="twitter:description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。扩展阅读：http://nshipster.cn/cocoapods/">
+<meta name="twitter:description" content="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。
+扩展阅读：http://nshipster.cn/cocoapods/
+一、安装CocoapodsCocoapods用Ruby实现，所以我们必须有Ruby的环境。OS S系统默认自带了Ruby运行环境，但万一你的Ruby">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -152,11 +154,12 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。"><span class="toc-number">1.</span> <span class="toc-text">Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有可能你会遇到你的Gem版本太老了"><span class="toc-number"></span> <span class="toc-text">有可能你会遇到你的Gem版本太老了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods环境设置"><span class="toc-number"></span> <span class="toc-text">Cocoapods环境设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建Cocoapods项目"><span class="toc-number"></span> <span class="toc-text">构建Cocoapods项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步嘛，肯定是先创建XCode项目了。"><span class="toc-number">1.</span> <span class="toc-text">第一步嘛，肯定是先创建XCode项目了。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二部，查看开源库是否可用"><span class="toc-number">2.</span> <span class="toc-text">第二部，查看开源库是否可用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三步、初始化pod"><span class="toc-number">3.</span> <span class="toc-text">第三步、初始化pod</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类库的更新"><span class="toc-number"></span> <span class="toc-text">类库的更新</span></a>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装Cocoapods"><span class="toc-number">1.</span> <span class="toc-text">一、安装Cocoapods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#有可能你会遇到你的Gem版本太老了"><span class="toc-number">1.1.</span> <span class="toc-text">有可能你会遇到你的Gem版本太老了</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocoapods环境设置"><span class="toc-number">2.</span> <span class="toc-text">Cocoapods环境设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建Cocoapods项目"><span class="toc-number">3.</span> <span class="toc-text">构建Cocoapods项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步嘛，肯定是先创建XCode项目了。"><span class="toc-number">3.1.</span> <span class="toc-text">第一步嘛，肯定是先创建XCode项目了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步，查看开源库是否可用"><span class="toc-number">3.2.</span> <span class="toc-text">第二步，查看开源库是否可用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步、初始化pod"><span class="toc-number">3.3.</span> <span class="toc-text">第三步、初始化pod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行下面的命令安装;"><span class="toc-number">3.4.</span> <span class="toc-text">执行下面的命令安装;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类库的更新"><span class="toc-number">4.</span> <span class="toc-text">类库的更新</span></a></li></ol>
               </div>
               
-                <h4 id="Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。">Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。</h4><p>扩展阅读：<a href="http://nshipster.cn/cocoapods/" target="_blank" rel="external">http://nshipster.cn/cocoapods/</a></p>
-<p><img src="http://7u2j0x.com1.z0.glb.clouddn.com/music1.jpg" alt=""><br><a id="more"></a><br>一、安装Cocoapods<br>Cocoapods用Ruby实现，所以我们必须有Ruby的环境。OS S系统默认自带了Ruby运行环境，但万一你的Ruby环境有了问题请Google搜索一下。</p>
+                <p><strong>Cocoapods是一款优秀的类库管理工具，使用它可以下载库的源代码、解决库的依赖关系及通过workSpace导入我们的工程中，然而这些使用上的便利都建立在我们正确设置的基础上。</strong></p>
+<p>扩展阅读：<a href="http://nshipster.cn/cocoapods/" target="_blank" rel="external">http://nshipster.cn/cocoapods/</a></p>
+<h2 id="一、安装Cocoapods">一、安装Cocoapods</h2><p>Cocoapods用Ruby实现，所以我们必须有Ruby的环境。OS S系统默认自带了Ruby运行环境，但万一你的Ruby环境有了问题请Google搜索一下。</p>
 <p>在Ruby环境中，Cocoapods的安装十分简单，理论上仅需要一条命令就可以完成安装:</p>
 <p><code>sudo gem install cocoapods</code></p>
 <p>但是在伟大的天朝，却没有这么简单了。</p>
@@ -168,7 +171,7 @@
 <h3 id="有可能你会遇到你的Gem版本太老了">有可能你会遇到你的Gem版本太老了</h3><p>Cocoapods是以Gem包形式被安装的，如果Gem的版本过低同样会导致安装失败。当你遇到这样的问题时只需要升级Gem版本就好了。</p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem <span class="keyword">update</span> --<span class="built_in">system</span></span><br></pre></td></tr></table></figure>
 <h2 id="Cocoapods环境设置">Cocoapods环境设置</h2><p>简简单单的几步我们的安装过程就结束了，但是我们在使用之前还需要用pod setup 命令来设置Cocoapods环境，为什么要设置，设置什么？我们看完设置的过程就自然明白了。为了便于观察，我们加上了verbose选项。</p>
- <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod setup <span class="comment">--verbose</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod setup <span class="comment">--verbose</span></span><br></pre></td></tr></table></figure>
 <p> <img src="http://yangxiaolei.qiniudn.com/QQ20150212-2@2x.png" alt=""></p>
 <p> 熟悉git的小伙伴们肯定一眼就看出来了，整个设置过程就做了两件事情：</p>
 <ul>
@@ -180,17 +183,14 @@
 <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pod repo <span class="keyword">remove</span> master</span><br><span class="line"></span><br><span class="line">pod repo <span class="keyword">add</span> master http:<span class="comment">//git.oschina.net/akuandev/Specs.git</span></span><br><span class="line"></span><br><span class="line">pod repo update</span><br></pre></td></tr></table></figure>
 <p> 大概这里会下载180MB，稍微等待就会好了。</p>
 <p> 千万别再去运行  ｀pod setup｀命令，不然他会把代码仓库地址重新设置为github，如果需要更新Specs，只需要运行<code>pod repo update</code>命令即可。</p>
-<h2 id="构建Cocoapods项目">构建Cocoapods项目</h2><h4 id="第一步嘛，肯定是先创建XCode项目了。">第一步嘛，肯定是先创建XCode项目了。</h4><h4 id="第二部，查看开源库是否可用">第二部，查看开源库是否可用</h4><p> 假如我们要用到AFNetworking类库,先使用<code>pod search</code>命令搜索一下这个库:<br> <img src="http://yangxiaolei.qiniudn.com/QQ20150212-4@2x.png" alt=""></p>
-<p> 因为输出结果太多了，所以这里我只截取了部分片段。如果这个地方出错了，可能是本地的Specs没有更新，可以通过<code>pod repo update</code>命令更新之后再次尝试。</p>
-<h4 id="第三步、初始化pod">第三步、初始化pod</h4><p> Cocospods的初始化是基于Podfile文件的，在这个文件中我们要指定我们需要哪些库，以及版本信息，以便COcoapods能正确工作，Podfile的创建有很多方法，可以直接手动创建这个文件，也可以通过下面的命令来自动生成一个模版文件:</p>
-<p> <code>pod init</code><br> 无论用什么方法创建Podfile必须包含所支持的平台，类库名和版本这三个必要信息。</p>
- <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Uncomment this <span class="keyword">line</span> to <span class="keyword">define</span> a global platform for your project</span></span><br><span class="line"></span><br><span class="line">platform :ios, <span class="string">'6.0'</span> <span class="preprocessor">#所有库支持的iOS最低版本</span></span><br><span class="line"></span><br><span class="line">pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;2.0'</span> <span class="preprocessor">#版本号</span></span><br></pre></td></tr></table></figure>
-<p> 执行下面的命令安装;</p>
-<p> <code>pod install</code></p>
-<p> 安装完成之后会输出下面的结果:</p>
-<p> <img src="http://yangxiaolei.qiniudn.com/QQ20150212-5@2x.png" alt=""></p>
-<p> 在你的项目文件会多出一些文件，如下图：<br> <img src="http://yangxiaolei.qiniudn.com/QQ20150212-6@2x.png" alt=""></p>
-<p> 点击红色圈内的<code>xcworkspace</code> 即可继续完成后边的开发过程，无需担心任何依赖问题。</p>
+<h2 id="构建Cocoapods项目">构建Cocoapods项目</h2><h3 id="第一步嘛，肯定是先创建XCode项目了。">第一步嘛，肯定是先创建XCode项目了。</h3><h3 id="第二步，查看开源库是否可用">第二步，查看开源库是否可用</h3><p> 假如我们要用到AFNetworking类库,先使用<code>pod search</code>命令搜索一下这个库:</p>
+<p> 如果这个地方出错了，可能是本地的Specs没有更新，可以通过<code>pod repo update</code>命令更新之后再次尝试。</p>
+<h3 id="第三步、初始化pod">第三步、初始化pod</h3><p> Cocospods的初始化是基于Podfile文件的，在这个文件中我们要指定我们需要哪些库，以及版本信息，以便COcoapods能正确工作，Podfile的创建有很多方法，可以直接手动创建这个文件，也可以通过下面的命令来自动生成一个模版文件:</p>
+<p><code>pod init</code><br> 无论用什么方法创建Podfile必须包含所支持的平台，类库名和版本这三个必要信息。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Uncomment this <span class="keyword">line</span> to <span class="keyword">define</span> a global platform for your project</span></span><br><span class="line"></span><br><span class="line">platform :ios, <span class="string">'6.0'</span> <span class="preprocessor">#所有库支持的iOS最低版本</span></span><br><span class="line"></span><br><span class="line">pod <span class="string">'AFNetworking'</span>, <span class="string">'~&gt;2.0'</span> <span class="preprocessor">#版本号</span></span><br></pre></td></tr></table></figure>
+<h3 id="执行下面的命令安装;">执行下面的命令安装;</h3><p><code>pod install</code></p>
+<p> 在你的项目文件会多出一些文件</p>
+<p><code>.xcworkspace</code> 即可继续完成后边的开发过程，无需担心任何依赖问题。</p>
 <h2 id="类库的更新">类库的更新</h2><p>类库也处于一个不断维护的状态，所以当我们完成<code>pod install</code>之后仍然可能会有一些更新。另外我们对于类库的依赖随着项目的开发可能也会有一些变动。这就要求我们的Cocoapods也能按照许求更新类库。当小伙伴们有这样的需求的时候只需要运行下面的命令即可:</p>
 <p><code>pod update</code></p>
 
@@ -200,7 +200,7 @@
               <a href="/2015/02/12/swiftcocoapods/" class="article-date">
   <time datetime="2015-02-12T14:25:44.000Z" itemprop="datePublished">2015-02-12</time>
 </a>
-              <a data-url="http://dowhile.net/2015/02/12/swiftcocoapods/" data-id="ciafhyrak000832s6azpd26zz" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/02/12/swiftcocoapods/" data-id="ciafilf4800096ks6ouq45yal" class="article-share-link">Share</a>
               
                 <a href="#comments" class="article-comment-link">Comments</a>
               
