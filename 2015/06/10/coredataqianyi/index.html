@@ -17,7 +17,7 @@
 引发模型不兼容错误在托管对象模型中添加另外一个新的实体，并且在新的实体中添加一些新的属性">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150605-1@2x.png">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150605-2@2x.png">
-<meta property="og:updated_time" content="2015-06-10T06:38:51.000Z">
+<meta property="og:updated_time" content="2015-06-10T07:29:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core Data托管对象模型的迁移">
 <meta name="twitter:description" content="修改托管对象模型在应用程序的进行过程中，其托管对象模型也可能需要进行修改。对于一些比较简单的修改，诸如设定属性的默认值、设定验证规则、使用获取请求模板等，是可以直接实施的。而对于另外一些更为结构化的修改，则需要把持久化存储区迁移到新的模型版本才行。假如没有提供迁移数据所需要的映射与设定，那么应用程序就会崩溃。
@@ -152,7 +152,7 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改托管对象模型"><span class="toc-number">1.</span> <span class="toc-text">修改托管对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引发模型不兼容错误"><span class="toc-number">1.1.</span> <span class="toc-text">引发模型不兼容错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加模型版本"><span class="toc-number">2.</span> <span class="toc-text">添加模型版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#轻量级的迁移方式"><span class="toc-number">3.</span> <span class="toc-text">轻量级的迁移方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续！"><span class="toc-number">4.</span> <span class="toc-text">未完待续！</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改托管对象模型"><span class="toc-number">1.</span> <span class="toc-text">修改托管对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引发模型不兼容错误"><span class="toc-number">1.1.</span> <span class="toc-text">引发模型不兼容错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加模型版本"><span class="toc-number">2.</span> <span class="toc-text">添加模型版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#轻量级的迁移方式"><span class="toc-number">3.</span> <span class="toc-text">轻量级的迁移方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续！"><span class="toc-number">4.</span> <span class="toc-text">未完待续！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料："><span class="toc-number">5.</span> <span class="toc-text">参考资料：</span></a></li></ol>
               </div>
               
                 <h2 id="修改托管对象模型">修改托管对象模型</h2><p>在应用程序的进行过程中，其托管对象模型也可能需要进行修改。对于一些比较简单的修改，诸如设定属性的默认值、设定验证规则、使用获取请求模板等，是可以直接实施的。而对于另外一些更为结构化的修改，则需要把持久化存储区迁移到新的模型版本才行。假如没有提供迁移数据所需要的映射与设定，那么应用程序就会崩溃。</p>
@@ -177,14 +177,18 @@
 <p>打开<strong>CoreDataHelper.swift</strong>同时添加一个属性在这个类中。</p>
 <p><code>lazy var options: NSDictionary?</code></p>
 <p>Right now, you’re setting up the persistent store with no options for default behavior. You’ll use the options dictionary to set the necessary flags.</p>
-<h2 id="未完待续！">未完待续！</h2>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里是添加的部分，名如其意，当我们需要自动版本迁移时，我们需要在addPersistentStoreWithType方法中设置如下options</span></span><br><span class="line"><span class="keyword">let</span> options = [<span class="type">NSInferMappingModelAutomaticallyOption</span>: <span class="literal">true</span>, <span class="type">NSMigratePersistentStoresAutomaticallyOption</span>: <span class="literal">true</span>] </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> error: <span class="type">NSError</span>? = <span class="literal">nil</span></span><br><span class="line">persistentStoreCoordinator.addPersistentStoreWithType(<span class="type">NSSQLiteStoreType</span>, configuration: <span class="literal">nil</span>, <span class="type">URL</span>: storeURL, options: options, error: &amp;error)</span><br></pre></td></tr></table></figure>
+<h2 id="未完待续！">未完待续！</h2><h2 id="参考资料：">参考资料：</h2><p><a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreDataVersioning/Articles/Introduction.html#//apple_ref/doc/uid/TP40004399-CH1-SW1" target="_blank" rel="external">Core Data Model Versioning and Data Migration</a></p>
+<p><a href="http://objccn.io/issue-4-7/" target="_blank" rel="external">自定义Core Data 迁移</a></p>
+<p><a href="http://chun.tips/blog/2014/11/28/core-data-ban-ben-qian-yi-jing-yan-zong-jie/" target="_blank" rel="external">Core Data 版本迁移经验总结</a></p>
+
               
             </div>
             <footer class="article-footer">
               <a href="/2015/06/10/coredataqianyi/" class="article-date">
   <time datetime="2015-06-10T06:36:06.000Z" itemprop="datePublished">2015-06-10</time>
 </a>
-              <a data-url="http://dowhile.net/2015/06/10/coredataqianyi/" data-id="ciaqdydnj000iros6k6prdj3q" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/06/10/coredataqianyi/" data-id="ciaqirtff000n5ts661hpkyrl" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li></ul>
@@ -194,6 +198,15 @@
       
         
 <nav id="article-nav">
+  
+    <a href="/2015/06/10/uigestureresognizer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          触摸和手势
+        
+      </div>
+    </a>
   
   
     <a href="/2015/06/04/coredata2/" id="article-nav-older" class="article-nav-link-wrap">

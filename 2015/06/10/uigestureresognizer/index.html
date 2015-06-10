@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>触摸和手势 | 这块显卡有点冷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="触摸触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。
+当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="触摸和手势">
+<meta property="og:url" content="http://dowhile.net/2015/06/10/uigestureresognizer/index.html">
+<meta property="og:site_name" content="这块显卡有点冷">
+<meta property="og:description" content="触摸触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。
+当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段">
+<meta property="og:updated_time" content="2015-06-10T08:53:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="触摸和手势">
+<meta name="twitter:description" content="触摸触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。
+当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+    <div id="wrap">
+	
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/tags">
+                  
+                  
+
+                
+                  Tags
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/archives">
+                  
+                  
+
+                
+                  Archives
+                </a>
+            
+              <a class="main-nav-link" href="/about">
+                  
+                  
+
+                
+                  About
+                </a>
+            
+              <a class="main-nav-link" href="http://weibo.com/71414225">
+                  
+                  
+
+                
+                  WeiBo
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dowhile.net"></form>
+          </div>
+        </div>
+    </div>
+</header>
+
+		<div class="outer">
+		
+
+    <article id="post-uigestureresognizer" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/06/10/uigestureresognizer/">
+      <h1 class="article-title" itemprop="name">
+        触摸和手势
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/06/10/uigestureresognizer/" class="article-date">
+  <time datetime="2015-06-10T08:52:13.000Z" itemprop="datePublished">2015-06-10</time>
+</a>-->
+        <!-- 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/手势/">手势</a>
+  </div>
+ -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/06/10/uigestureresognizer/">
+      <h1 class="article-title" itemprop="name">
+        触摸和手势
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#触摸"><span class="toc-number">1.</span> <span class="toc-text">触摸</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#手势(UIGestureRecognizer)"><span class="toc-number">2.</span> <span class="toc-text">手势(UIGestureRecognizer)</span></a></li></ol>
+              </div>
+              
+                <h1 id="触摸">触摸</h1><p>触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。</p>
+<p>当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段。</p>
+<table>
+<thead>
+<tr>
+<th>Began</th>
+<th>手指首次接触屏幕，UITouch实例被创建，该阶段只执行一次   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moved</td>
+<td>手指在屏幕上移动，该阶段执行多次</td>
+</tr>
+<tr>
+<td>Stationary</td>
+<td>手指在屏幕上静止不动，该阶段执行多次</td>
+</tr>
+<tr>
+<td>Ended</td>
+<td>手指离开屏幕，该阶段只执行一次，UITouch实例被销毁</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+<td>意外终止触摸，该阶段只执行一次</td>
+</tr>
+</tbody>
+</table>
+<p>UIView继承了与4个UITouch阶段对应的4中方法，通过该4种方法中的一个或者多个，把UIEvent发送到视图上。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">   <span class="comment">/*首次接触到屏幕*/</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesMoved</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*手指在移动*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesCancelled</span><span class="params">(touches: Set&lt;UITouch&gt;?, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line"> <span class="comment">/*触摸意外终止*/</span>   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesEnded</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*触摸结束*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="手势(UIGestureRecognizer)">手势(UIGestureRecognizer)</h1><p>在iOS开发中除了用上边说到的四中方法来检测用户的触摸事件外，可以用<strong>UIGestureRecognizer</strong>的衍生类来进行判断。这个类被称为手势识别器。</p>
+<table>
+<thead>
+<tr>
+<th>UITapGestureRecognizer</th>
+<th>点击事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UIPinchGestureRecognizer</td>
+<td>捏合事件</td>
+</tr>
+<tr>
+<td>UIRotationGestureRecognizer</td>
+<td>旋转事件</td>
+</tr>
+<tr>
+<td>UISwipeGestureRecognizer</td>
+<td>轻扫事件</td>
+</tr>
+<tr>
+<td>UIPanGestureRecognizer</td>
+<td>拖移事件</td>
+</tr>
+<tr>
+<td>UIScreenEdgePanGestureRecognizer</td>
+<td></td>
+</tr>
+<tr>
+<td>UILongPressGestureRecognizer</td>
+<td>长按事件</td>
+</tr>
+</tbody>
+</table>
+<p>手势识别<strong>UIGestureRecognizer</strong>绑定到view对象，当发生手势时，绑定到的view对象会响应，它确定这个动作是否对应一个特定的手势。如果它能识别这个手势，那么就会向绑定它的view发送消息，每一个手势必须关联到view对象中才会有作用，一个view对象可以关联多个手势，但是一个手势只能与一个view相关联。当用户触摸了view，这个<strong>GestureRecognizer</strong>就会接收到消息，响应特定的触摸事件。</p>
+<p>下面分别介绍每个手势识别器常用的一些属性设置。</p>
+<p><strong>UITapGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>numberOfTapsRequired</th>
+<th>设置单击次数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numberOfTouchesRequired</td>
+<td>设置手指个数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UIPanGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>maximumNumberOfTouches</th>
+<th>最多手指个数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minimumNumberOfTouches</td>
+<td>最少手指个数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UILongPressGestureRecognizer</strong><br>|minimumPressDuration|需要长按的时间，最小0.5s<br>|:|<br>|numberOfTouchesRequired|需要长按时的手指数<br>|numberOfTapsRequired|需要长按时的单击次数<br>|allowableMovement|手指按住允许拖动的距离</p>
+<p><strong>UIPinchGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>velocity</th>
+<th>手指捏合，大于1时表示两个手指距离变大，小与1时表示两个手指距离变小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scale</td>
+<td>手指捏合时的速率</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UIRotationGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>rotation</th>
+<th>旋转方向，小于0为逆时针旋转，大于0时表示顺时针旋转</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>velocity</td>
+<td>旋转时速率</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UISwipeGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>direction</th>
+<th>轻扫的方向，取值有：Right,Left,Up,Down</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numberOfTouchesRequired</td>
+<td>轻扫手指的个数</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/06/10/uigestureresognizer/" class="article-date">
+  <time datetime="2015-06-10T08:52:13.000Z" itemprop="datePublished">2015-06-10</time>
+</a>
+              <a data-url="http://dowhile.net/2015/06/10/uigestureresognizer/" data-id="ciaqirtf900095ts606oi5ma4" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIGestureRecognizer/">UIGestureRecognizer</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2015/06/10/coredataqianyi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Core Data托管对象模型的迁移</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 这块显卡有点冷<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+	<nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="http://weibo.com/71414225" class="mobile-nav-link">WeiBo</a>
+  
+</nav>
+</div>
+</body>
+</html>
+
