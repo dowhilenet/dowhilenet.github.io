@@ -17,7 +17,7 @@
 引发模型不兼容错误在托管对象模型中添加另外一个新的实体，并且在新的实体中添加一些新的属性">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150605-1@2x.png">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150605-2@2x.png">
-<meta property="og:updated_time" content="2015-06-10T06:37:28.000Z">
+<meta property="og:updated_time" content="2015-06-10T06:38:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core Data托管对象模型的迁移">
 <meta name="twitter:description" content="修改托管对象模型在应用程序的进行过程中，其托管对象模型也可能需要进行修改。对于一些比较简单的修改，诸如设定属性的默认值、设定验证规则、使用获取请求模板等，是可以直接实施的。而对于另外一些更为结构化的修改，则需要把持久化存储区迁移到新的模型版本才行。假如没有提供迁移数据所需要的映射与设定，那么应用程序就会崩溃。
@@ -152,11 +152,11 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改托管对象模型"><span class="toc-number">1.</span> <span class="toc-text">修改托管对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引发模型不兼容错误"><span class="toc-number">1.0.1.</span> <span class="toc-text">引发模型不兼容错误</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加模型版本"><span class="toc-number">2.</span> <span class="toc-text">添加模型版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#轻量级的迁移方式"><span class="toc-number">3.</span> <span class="toc-text">轻量级的迁移方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未完待续！"><span class="toc-number"></span> <span class="toc-text">未完待续！</span></a>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改托管对象模型"><span class="toc-number">1.</span> <span class="toc-text">修改托管对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引发模型不兼容错误"><span class="toc-number">1.1.</span> <span class="toc-text">引发模型不兼容错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加模型版本"><span class="toc-number">2.</span> <span class="toc-text">添加模型版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#轻量级的迁移方式"><span class="toc-number">3.</span> <span class="toc-text">轻量级的迁移方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续！"><span class="toc-number">4.</span> <span class="toc-text">未完待续！</span></a></li></ol>
               </div>
               
                 <h2 id="修改托管对象模型">修改托管对象模型</h2><p>在应用程序的进行过程中，其托管对象模型也可能需要进行修改。对于一些比较简单的修改，诸如设定属性的默认值、设定验证规则、使用获取请求模板等，是可以直接实施的。而对于另外一些更为结构化的修改，则需要把持久化存储区迁移到新的模型版本才行。假如没有提供迁移数据所需要的映射与设定，那么应用程序就会崩溃。</p>
-<h4 id="引发模型不兼容错误">引发模型不兼容错误</h4><p>在托管对象模型中添加另外一个新的实体，并且在新的实体中添加一些新的属性。<br>重新运行应用程序，你会发现程序会崩溃掉。</p>
+<h3 id="引发模型不兼容错误">引发模型不兼容错误</h3><p>在托管对象模型中添加另外一个新的实体，并且在新的实体中添加一些新的属性。<br>重新运行应用程序，你会发现程序会崩溃掉。</p>
 <p>对于处在开发初期的应用程序来说，这种崩溃算不上什么大的问题，我们只需要吧程序删除了并重新运行一次就好了。删除之后，在次运行应用程序时，它会按照最新的模型来创建持久化存储区。这样一来，存储区就可以和模型相兼容了，于是应用程序也就不会再次崩溃了。但是，这样做也会失去存储区里原有的数据。对于已经在<strong>App Store</strong>上架的程序来说，这让人无法接受。有好几种办法都可以迁移现有的持久化存储区，而迁移路径则是由变更的复杂程度以及是否使用<strong>iCloud</strong>等因素来决定的。无论采用哪种迁移办法，我们都必须首先熟悉“<strong>模型版本控制</strong>”。</p>
 <p>我们先删除刚刚添加的实体，让项目恢复到之前的状态。</p>
 <h2 id="添加模型版本">添加模型版本</h2><p>按照以下步骤来添加模型版本：</p>
@@ -177,14 +177,14 @@
 <p>打开<strong>CoreDataHelper.swift</strong>同时添加一个属性在这个类中。</p>
 <p><code>lazy var options: NSDictionary?</code></p>
 <p>Right now, you’re setting up the persistent store with no options for default behavior. You’ll use the options dictionary to set the necessary flags.</p>
-<h1 id="未完待续！">未完待续！</h1>
+<h2 id="未完待续！">未完待续！</h2>
               
             </div>
             <footer class="article-footer">
               <a href="/2015/06/10/coredataqianyi/" class="article-date">
   <time datetime="2015-06-10T06:36:06.000Z" itemprop="datePublished">2015-06-10</time>
 </a>
-              <a data-url="http://dowhile.net/2015/06/10/coredataqianyi/" data-id="ciaqdwpti000iqys6722l8cf7" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/06/10/coredataqianyi/" data-id="ciaqdydnj000iros6k6prdj3q" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li></ul>
