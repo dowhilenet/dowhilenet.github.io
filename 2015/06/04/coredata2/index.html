@@ -19,7 +19,7 @@
 我在这里所用的办法是通过辅助类来设置Core Data，这样的话，你就可以将这种办法运用到自己的项目中了。这也">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150604-1@2x.png">
 <meta property="og:image" content="http://7u2j0x.com1.z0.glb.clouddn.com/QQ20150604-2@2x.png">
-<meta property="og:updated_time" content="2015-06-06T03:26:06.000Z">
+<meta property="og:updated_time" content="2015-06-06T03:34:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core Data的增删查改">
 <meta name="twitter:description" content="初始化方法一创建一个iOS工程，勾选Use Core Data。
@@ -204,7 +204,7 @@
 <p>自己试一下，看看勾选之后和没有勾选生成的<strong>Entity.swift</strong>文件有什么区别。</p>
 <h2 id="创建托管对象">创建托管对象</h2><p>所有的事情都准备好了之后，现在可以新建一些托管对象了。</p>
 <p>新对象是由<strong>NSEntityDescription</strong>按照指定的名称并根据某个特定的<strong>实体</strong>而创建出来的。除了要指定对象所依据的<strong>实体</strong>之外，还需要提供<strong>托管对象上下文</strong>，创建好的<strong>托管对象</strong>将会放在那个<strong>上下文</strong>里面。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> coredataHelper = <span class="type">CoreDataHelper</span>()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> managedobjectcontext = coredataHelper.managedObjectContext&#123;</span><br><span class="line">            <span class="keyword">var</span> object = <span class="type">NSEntityDescription</span>.insertNewObjectForEntityForName(<span class="string">"Entity"</span>, inManagedObjectContext: managedobjectcontext) <span class="keyword">as</span>! <span class="type">Entity</span></span><br><span class="line">            object.name = <span class="string">"Hello World Core Data"</span></span><br><span class="line">            <span class="keyword">var</span> e:<span class="type">NSError</span>?</span><br><span class="line">            <span class="keyword">if</span> !managedobjectcontext.save(&amp;e) &#123;</span><br><span class="line">                <span class="built_in">println</span>(<span class="string">"okCould not save <span class="subst">\(e)</span>, <span class="subst">\(e!.userInfo)</span>"</span>) &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">println</span>(<span class="string">"数据存储成功，哦也"</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> managedobjectcontext = managedContext&#123;</span><br><span class="line">    <span class="keyword">var</span> object = <span class="type">NSEntityDescription</span>.insertNewObjectForEntityForName(<span class="string">"Entity"</span>, inManagedObjectContext: managedobjectcontext) <span class="keyword">as</span>! <span class="type">Entity</span></span><br><span class="line">    object.name = <span class="string">"Hello World Core Data"</span></span><br><span class="line">    <span class="keyword">var</span> e:<span class="type">NSError</span>?</span><br><span class="line">    <span class="keyword">if</span> !managedobjectcontext.save(&amp;e) &#123;</span><br><span class="line">        <span class="built_in">println</span>(<span class="string">"okCould not save <span class="subst">\(e)</span>, <span class="subst">\(e!.userInfo)</span>"</span>) &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">println</span>(<span class="string">"数据存储成功，哦也"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="后端SQL的可见性">后端SQL的可见性</h2><p>按照下列步骤开启<strong>SQL Debug</strong>模式</p>
 <p>1、点击Product&gt;Scheme&gt;Edit Scheme …<br>2、点击Run Grocery Dude，并切换到Arguments分页。<br>3、点击Arguments Passed On Launch区域中的“+”按钮，以新增参数。<br>4、输入新参数 <code>-com.apple.CoreData.SQLDebug 3</code>,然后点击OK。</p>
 <p>现在我们已经开启了第三级的SQL Debug模式，然后重新运行程序，查看控制台输出了什么。</p>
@@ -219,7 +219,7 @@
               <a href="/2015/06/04/coredata2/" class="article-date">
   <time datetime="2015-06-04T06:53:06.000Z" itemprop="datePublished">2015-06-04</time>
 </a>
-              <a data-url="http://dowhile.net/2015/06/04/coredata2/" data-id="ciakhc5xw000iahs6rncvbhi1" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/06/04/coredata2/" data-id="ciaqdwptk000mqys6r8oizn07" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreData/">CoreData</a></li></ul>
@@ -229,6 +229,15 @@
       
         
 <nav id="article-nav">
+  
+    <a href="/2015/06/10/coredataqianyi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Core Data托管对象模型的迁移
+        
+      </div>
+    </a>
   
   
     <a href="/2015/06/03/CoreData1/" id="article-nav-older" class="article-nav-link-wrap">
