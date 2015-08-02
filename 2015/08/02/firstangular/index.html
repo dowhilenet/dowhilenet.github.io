@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初识Angular | 这块显卡有点冷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="Hello World1234&amp;lt;body ng-app&amp;gt;  &amp;lt;input ng-model=&quot;name&quot; type=&quot;text&quot; placeholder=&quot;Your name&quot; /&amp;gt;  &amp;lt;h1&amp;gt;Hello &amp;#123;&amp;#123; name &amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;
+虽然这个例子不怎么有趣,但它展示了Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识Angular">
+<meta property="og:url" content="http://dowhile.net/2015/08/02/firstangular/index.html">
+<meta property="og:site_name" content="这块显卡有点冷">
+<meta property="og:description" content="Hello World1234&amp;lt;body ng-app&amp;gt;  &amp;lt;input ng-model=&quot;name&quot; type=&quot;text&quot; placeholder=&quot;Your name&quot; /&amp;gt;  &amp;lt;h1&amp;gt;Hello &amp;#123;&amp;#123; name &amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;
+虽然这个例子不怎么有趣,但它展示了Angular">
+<meta property="og:updated_time" content="2015-08-02T07:41:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识Angular">
+<meta name="twitter:description" content="Hello World1234&amp;lt;body ng-app&amp;gt;  &amp;lt;input ng-model=&quot;name&quot; type=&quot;text&quot; placeholder=&quot;Your name&quot; /&amp;gt;  &amp;lt;h1&amp;gt;Hello &amp;#123;&amp;#123; name &amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;
+虽然这个例子不怎么有趣,但它展示了Angular">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+    <div id="wrap">
+	
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/tags">
+                  
+                  
+
+                
+                  Tags
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/archives">
+                  
+                  
+
+                
+                  Archives
+                </a>
+            
+              <a class="main-nav-link" href="http://weibo.com/71414225">
+                  
+                  
+
+                
+                  WeiBo
+                </a>
+            
+              <a class="main-nav-link" href="http://segmentfault.com/u/dowhilenet">
+                  
+                  
+
+                
+                  SegmentFault
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dowhile.net"></form>
+          </div>
+        </div>
+    </div>
+</header>
+
+		<div class="outer">
+		
+
+    <article id="post-firstangular" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/08/02/firstangular/">
+      <h1 class="article-title" itemprop="name">
+        初识Angular
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/08/02/firstangular/" class="article-date">
+  <time datetime="2015-08-02T06:33:24.000Z" itemprop="datePublished">2015-08-02</time>
+</a>-->
+        <!--  -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/08/02/firstangular/">
+      <h1 class="article-title" itemprop="name">
+        初识Angular
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello_World"><span class="toc-number">1.</span> <span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJS中的数据绑定"><span class="toc-number">2.</span> <span class="toc-text">AngularJS中的数据绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单的数据绑定"><span class="toc-number">2.1.</span> <span class="toc-text">简单的数据绑定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#控制器"><span class="toc-number">3.</span> <span class="toc-text">控制器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据绑定的最佳事件"><span class="toc-number">4.</span> <span class="toc-text">数据绑定的最佳事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模块(module)"><span class="toc-number">5.</span> <span class="toc-text">模块(module)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作用域(scope)"><span class="toc-number">6.</span> <span class="toc-text">作用域(scope)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#视图和Scope"><span class="toc-number">6.1.</span> <span class="toc-text">视图和Scope</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#控制器(Controller)"><span class="toc-number">7.</span> <span class="toc-text">控制器(Controller)</span></a></li></ol>
+              </div>
+              
+                <h1 id="Hello_World">Hello World</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">ng-model</span>=<span class="value">"name"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">placeholder</span>=<span class="value">"Your name"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Hello &#123;&#123; name &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>虽然这个例子不怎么有趣,但它展示了AngularJS最基本也最令人印象深刻的功能之一:数据绑定。</p>
+<h1 id="AngularJS中的数据绑定">AngularJS中的数据绑定</h1><p>它创建实时模板来代替视图,而不是将数据合并 进模板之后更新DOM。任何一个独立视图组件中的值都是动态替换的。这个功能可以说是 AngularJS中最重要的功能之一,也是让我们只用10行代码,并且在没有任何JavaScirpt的情况下 就可以写出Hello World的关键。</p>
+<p>要实现这个功能,只要在HTML页面中引用<code>angular.js</code>,并在某个DOM元素上明确设置 <code>ng-app</code>属性即可。<code>ng-app</code>属性声明所有被其包含的内容都属于这个<code>AngularJS</code>应用,这也是我们 可以在Web应用中嵌套<code>AngularJS</code>应用的原因。只有被具有<code>ng-app</code>属性的DOM元素包含的元素才会受<code>AngularJS</code>影响。</p>
+<h2 id="简单的数据绑定">简单的数据绑定</h2><p>审阅一下上面写的代码,我们使用<code>ng-model</code>指令将内部<strong>数据模型对象</strong>($scope)中的name属性绑定到了文本输入字段上。</p>
+<p>在输入字段上使用<code>ng-model</code>来实现数据的绑定。ruxia:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">ng-model</span>=<span class="value">"person.name"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">placeholder</span>=<span class="value">"Yourname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Hello&#123;&#123; person.name &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样绑定就设置好了(没错,就是这么简单)。我们可以观察一下视图是如何更新数据模型的。当输入字段中的值发生变化时,person.name会被更新,而视图将反映出这个更新。</p>
+<p>我们仅通过视图就实现了一个双向数据绑定。为了从其他角度(后端到前端)解释双向数据绑定,后面会深入介绍控制器。</p>
+<h1 id="控制器">控制器</h1><p>正如ng-app声明所有被它包含的元素都属于<code>AngularJS</code>应用一样,DOM元素上的 <code>ng-controller</code>声明所有被它包含的元素都属于某个控制器。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">'MyController'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">h1</span>&gt;</span> &#123;&#123; clock &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">￼￼<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中,我们会创建一个每秒钟走一步的时钟,并更新clock变量上的数据:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// MyController函数接受两个参数,该DOM中的$scope\$timeout</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">MyController</span>(<span class="params">$scope,$timeout</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> updateClock = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      $scope.clock = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      $timeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        updateClock();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    updateClock();</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="数据绑定的最佳事件">数据绑定的最佳事件</h1><p>由于JavaScript自身的特点,以及它在传递值和引用时的不同处理方式,通常认为,在视图中通过对象的属性而非对象本身来进行引用绑定,是Angular中的最佳实践。</p>
+<p>修改上边的时钟的例子:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"Mycontroller"</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123;clock.now&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="php"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Mycontroller</span><span class="params">(<span class="variable">$scope</span>)</span></span>&#123;</span><br><span class="line">   <span class="variable">$scope</span>.clock = &#123;</span><br><span class="line">     now : <span class="keyword">new</span> Date()</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> updateClock = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="variable">$scope</span>.clock.now = <span class="keyword">new</span> Date()</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">   setInterval(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="variable">$scope</span>.<span class="variable">$apply</span>(updateClock);</span><br><span class="line">          &#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">   updateClock();</span><br><span class="line"> &#125;;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//将所有绑定都通过这样的形式放在视图中,是个非常好的主意。</span><br></pre></td></tr></table></figure>
+<h1 id="模块(module)">模块(module)</h1><p>在AngularJS中,模块是定义应用的最主要方式。模块包含了主要的应用代码。一个应用可 以包含多个模块,每一个模块都包含了定义具体功能的代码。</p>
+<p>AngularJS允许我们使用<code>angular.module()</code>方法来声明模块,这个方法能够接受两个参数, 第一个是模块的名称,第二个是依赖列表,也就是可以被注入到模块中的对象列表。</p>
+<p><code>angular.module(&#39;myApp&#39;, []);</code><br>这个方法相当于AngularJS模块的setter方法,是用来<strong>定义模块</strong>的。</p>
+<p>调用这个方法时如果只传递一个参数,就可以用它来引用模块。例如,可以通过以下代码来<strong>引用myApp模块</strong>:<br><code>angular.module(&#39;myApp&#39;)</code><br>这个方法相当于AngularJS模块的getter方法,用来获取对模块的引用。</p>
+<p><code>angular.module()</code>的参数列表。</p>
+<ol>
+<li>name是模块的名称,字符串变量。</li>
+<li>requires包含了一个字符串变量组成的列表,每个元素都是一个模块名称,本模块依赖于这 些模块,依赖需要在本模块加载之前由注入器进行预加载。</li>
+</ol>
+<h1 id="作用域(scope)">作用域(scope)</h1><p>作用域(scope)1是构成AngularJS应用的核心基础,在整个框架中都被广泛使用,因此了解 它如何工作是非常重要的。</p>
+<p>作用域是视图和控制器之间的胶水。在应用将视图渲染并呈献给用户之前,视图中的模板会和作用域进行连接,然后应用会对DOM进行设置以便将属性变化通知给AngularJS。这个功能让 XHR请求等promise对象的实现变得非常容易。</p>
+<p>作用域是应用状态的基础。基于动态绑定,我们可以依赖视图在修改数据时立刻更新$scope, 也可以依赖$scope在其发生变化时立刻重新渲染视图。</p>
+<h2 id="视图和Scope">视图和Scope</h2><p>关于作用域未完！！！我还需要理解</p>
+<p>AngularJS启动并生成视图时,会将根<code>ng-app</code>元素同<code>$rootScope</code>进行绑定。<code>$rootScope</code>是所有<code>$scope</code>对象的最上层。</p>
+<h1 id="控制器(Controller)">控制器(Controller)</h1><p>控制器在AngularJS中的作用是增强视图。在Hello World的例子中,我们并没有使用普通的控 制器,而是使用了一个隐式控制器。</p>
+<p>AngularJS中的控制器是一个函数,用来向视图的作用域中添加额外的功能。我们用它来给 作用域对象设置初始状态,并添加自定义行为。</p>
+<p>当我们在页面上创建一个新的控制器时,AngularJS会生成并传递一个新的$scope给这个控 制器。可以在这个控制器里初始化$scope。由于AngularJS会负责处理控制器的实例化过程,我 们只需编写构造函数即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstController</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">       $scope.message = <span class="string">"hello"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们是在全局作用域中创建的这个函数。这样做并不合适,因为会污染 全局命名空间。更合理的方式是创建一个模块,然后在模块中创建控制器,如下所示:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, []);</span><br><span class="line">     app.controller(<span class="string">'FirstController'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">       $scope.message = <span class="string">"hello"</span>;</span><br><span class="line">     &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>用内置指令ng-click可以将按钮、链接等其他任何DOM元素同点击事件进行绑定。ng-click指 令将浏览器中的mouseup事件,同设置在DOM元素上的事件处理程序绑定在一起(例如,当浏览器 在某个DOM元素上触发了点击事件,函数就会被调用)。和前面的例子类似,绑定看起来是这样的:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"FirstController"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h4</span>&gt;</span>The simplest adding machine ever<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"add(1)"</span> <span class="attribute">class</span>=<span class="value">"button"</span>&gt;</span>Add<span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">ng-click</span>=<span class="value">"subtract(1)"</span> <span class="attribute">class</span>=<span class="value">"button alert"</span>&gt;</span>Subtract<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h4</span>&gt;</span>Current count: &#123;&#123; counter &#125;&#125;<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>按钮和链接都被绑定在了内部$scope的一个操作上,当点击任何一个元素时AngularJS都会<br>调用相应的方法。注意,当设置调用哪个函数时,会同时用括号传递一个参数(add(1))。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.controller(<span class="string">'FirstController'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">  $scope.counter = <span class="number">0</span>;</span><br><span class="line">  $scope.add = <span class="function"><span class="keyword">function</span>(<span class="params">amount</span>) </span>&#123; $scope.counter += amount; &#125;;</span><br><span class="line">  $scope.subtract = <span class="function"><span class="keyword">function</span>(<span class="params">amount</span>) </span>&#123; $scope.counter -= amount;  &#125;;</span><br><span class="line">￼&#125;);</span><br></pre></td></tr></table></figure>
+<p>未完代写</p>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/08/02/firstangular/" class="article-date">
+  <time datetime="2015-08-02T06:33:24.000Z" itemprop="datePublished">2015-08-02</time>
+</a>
+              <a data-url="http://dowhile.net/2015/08/02/firstangular/" data-id="cicu6j67u000td71xk2h0vas7" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/28/swiftJson/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Swift与JSON数据</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 这块显卡有点冷<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+	<nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="http://weibo.com/71414225" class="mobile-nav-link">WeiBo</a>
+  
+    <a href="http://segmentfault.com/u/dowhilenet" class="mobile-nav-link">SegmentFault</a>
+  
+</nav>
+</div>
+</body>
+</html>
+
