@@ -4,40 +4,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>UIView的介绍 | 这块显卡有点冷</title>
+    <title>开关按钮UISwitch的用法 | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="UIView的常用属性frame：相对父视图的坐标和大小（x,y,w,h）
-bounds：相对自身的坐标和大小，所以bounds的x和y永远为0（0,0,w,h）
-center：相对父视图的中点坐标
-transform：控制视图的放大缩小和旋转
-superview：获取父视图
-subviews：获取所有子视图
-alpha：视图的透明度（0.0-1.0）
-tag：视图的标志（Int类型，默认等于0）">
+    <meta name="description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIView的介绍">
-<meta property="og:url" content="http://dowhile.net/2015/08/15/uiview/index.html">
+<meta property="og:title" content="开关按钮UISwitch的用法">
+<meta property="og:url" content="http://dowhile.net/2015/08/16/uiswitch/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="UIView的常用属性frame：相对父视图的坐标和大小（x,y,w,h）
-bounds：相对自身的坐标和大小，所以bounds的x和y永远为0（0,0,w,h）
-center：相对父视图的中点坐标
-transform：控制视图的放大缩小和旋转
-superview：获取父视图
-subviews：获取所有子视图
-alpha：视图的透明度（0.0-1.0）
-tag：视图的标志（Int类型，默认等于0）">
-<meta property="og:updated_time" content="2015-08-15T15:00:40.000Z">
+<meta property="og:description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
+<meta property="og:updated_time" content="2015-08-16T01:53:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIView的介绍">
-<meta name="twitter:description" content="UIView的常用属性frame：相对父视图的坐标和大小（x,y,w,h）
-bounds：相对自身的坐标和大小，所以bounds的x和y永远为0（0,0,w,h）
-center：相对父视图的中点坐标
-transform：控制视图的放大缩小和旋转
-superview：获取父视图
-subviews：获取所有子视图
-alpha：视图的透明度（0.0-1.0）
-tag：视图的标志（Int类型，默认等于0）">
+<meta name="twitter:title" content="开关按钮UISwitch的用法">
+<meta name="twitter:description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -122,15 +101,15 @@ tag：视图的标志（Int类型，默认等于0）">
 		<div class="outer">
 		
 
-    <article id="post-uiview" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-uiswitch" class="article article-type-post" itemscope itemprop="blogPost">
       <div class="article-meta">
         
           <header class="article-header">
             
   
-    <a href="/2015/08/15/uiview/">
+    <a href="/2015/08/16/uiswitch/">
       <h1 class="article-title" itemprop="name">
-        UIView的介绍
+        开关按钮UISwitch的用法
       </h1>
     </a>
   
@@ -140,12 +119,12 @@ tag：视图的标志（Int类型，默认等于0）">
           </header>
         
 
-        <!--<a href="/2015/08/15/uiview/" class="article-date">
-  <time datetime="2015-08-15T14:09:12.000Z" itemprop="datePublished">2015-08-15</time>
+        <!--<a href="/2015/08/16/uiswitch/" class="article-date">
+  <time datetime="2015-08-16T01:44:56.000Z" itemprop="datePublished">2015-08-16</time>
 </a>-->
         <!-- 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/UIView/">UIView</a>
+    <a class="article-category-link" href="/categories/UISwitch/">UISwitch</a>
   </div>
  -->
       </div>
@@ -155,9 +134,9 @@ tag：视图的标志（Int类型，默认等于0）">
               <!--<header class="article-header">
                 
   
-    <a href="/2015/08/15/uiview/">
+    <a href="/2015/08/16/uiswitch/">
       <h1 class="article-title" itemprop="name">
-        UIView的介绍
+        开关按钮UISwitch的用法
       </h1>
     </a>
   
@@ -168,26 +147,18 @@ tag：视图的标志（Int类型，默认等于0）">
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UIView的常用属性"><span class="toc-number">1.</span> <span class="toc-text">UIView的常用属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UIView常用的方法"><span class="toc-number">2.</span> <span class="toc-text">UIView常用的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待写"><span class="toc-number">3.</span> <span class="toc-text">待写</span></a></li></ol>
+                
               </div>
               
-                <h2 id="UIView的常用属性">UIView的常用属性</h2><p><code>frame</code>：相对父视图的坐标和大小（x,y,w,h）</p>
-<p><code>bounds</code>：相对自身的坐标和大小，所以bounds的x和y永远为0（0,0,w,h）</p>
-<p><code>center</code>：相对父视图的中点坐标</p>
-<p><code>transform</code>：控制视图的放大缩小和旋转</p>
-<p><code>superview</code>：获取父视图</p>
-<p><code>subviews</code>：获取所有子视图</p>
-<p><code>alpha</code>：视图的透明度（0.0-1.0）</p>
-<p><code>tag</code>：视图的标志（Int类型，默认等于0），设置后，可以通过viewWithTag方法拿到这个视图</p>
-<h2 id="UIView常用的方法">UIView常用的方法</h2><p><code>func removeFromSuperview()</code>：将视图从父视图中移除<br><code>func insertSubview(view:UIView, atIndex index:Int)</code>：指定一个位置插入一个视图，index越小，视图越往下<br><code>func exchangeSubviewAtIndex(index1:Int, withSubviewAtIndex index2:Int)</code>：将index1和index2位置的两个视图互换位置<br><code>func addSubview(view:UIView)</code>：添加视图到父视图<br><code>func insertSubview(view:UIView,belowSubview siblingSubview:UIView)</code>：在指定视图的下面插入视图<br><code>func insertSubview(view:UIVIew,aboveSubview siblingSubview:UIView)</code>：在指定视图上面插入视图<br><code>func bringSubviewToFront(view:UIView)</code>：把视图移到最顶层<br><code>func sendSubviewToBack(view:UIView)</code>：把视图移到最底层<br><code>func viewWithTag(tag:Int)-&gt;UIView?</code>：根据tag值获取视图</p>
-<h2 id="待写">待写</h2>
+                <p>创建开关，并且监听他的值的改变:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> uiswitch:<span class="type">UISwitch</span>!;</span><br><span class="line">    <span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">            <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">            uiswitch = <span class="type">UISwitch</span>()</span><br><span class="line">            <span class="comment">//设置位置（开关大小无法设置）</span></span><br><span class="line">            uiswitch.center=<span class="type">CGPointMake</span>(<span class="number">100</span>,<span class="number">50</span>);</span><br><span class="line">            <span class="comment">//设置默认值</span></span><br><span class="line">            uiswitch.on=<span class="literal">true</span>;</span><br><span class="line">            uiswitch.addTarget(<span class="keyword">self</span>, action: <span class="type">Selector</span>(<span class="string">"switchDidChange"</span>),</span><br><span class="line">            forControlEvents:<span class="type">UIControlEvents</span>.<span class="type">ValueChanged</span>)</span><br><span class="line">            <span class="keyword">self</span>.view.addSubview(uiswitch);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">switchDidChange</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="comment">//打印当前值</span></span><br><span class="line">            <span class="built_in">println</span>(uiswitch.on)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
               
             </div>
             <footer class="article-footer">
-              <a href="/2015/08/15/uiview/" class="article-date">
-  <time datetime="2015-08-15T14:09:12.000Z" itemprop="datePublished">2015-08-15</time>
+              <a href="/2015/08/16/uiswitch/" class="article-date">
+  <time datetime="2015-08-16T01:44:56.000Z" itemprop="datePublished">2015-08-16</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/15/uiview/" data-id="ciddv2ev000096j1xcg1ydwzs" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/08/16/uiswitch/" data-id="ciddv2ev5000i6j1x6qymoiz1" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -198,19 +169,19 @@ tag：视图的标志（Int类型，默认等于0）">
         
 <nav id="article-nav">
   
-    <a href="/2015/08/15/uitexfield/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/16/UItextview/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          文本输入框(UITextField)的用法
+          多行文本输入框UITextView的用法
         
       </div>
     </a>
   
   
-    <a href="/2015/08/15/uibutton/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/15/uitexfield/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">按钮(UIButton)的用法</div>
+      <div class="article-nav-title">文本输入框(UITextField)的用法</div>
     </a>
   
 </nav>
