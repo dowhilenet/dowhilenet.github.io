@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="这块显卡有点冷">
 <meta property="og:description" content="触摸触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。
 当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段">
-<meta property="og:updated_time" content="2015-06-10T08:53:34.000Z">
+<meta property="og:updated_time" content="2015-08-18T02:34:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="触摸和手势">
 <meta name="twitter:description" content="触摸触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。
@@ -150,16 +150,16 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#触摸"><span class="toc-number">1.</span> <span class="toc-text">触摸</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#手势(UIGestureRecognizer)"><span class="toc-number">2.</span> <span class="toc-text">手势(UIGestureRecognizer)</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#触摸"><span class="toc-number">1.</span> <span class="toc-text">触摸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手势(UIGestureRecognizer)"><span class="toc-number">2.</span> <span class="toc-text">手势(UIGestureRecognizer)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#每种手势的事例"><span class="toc-number">2.1.</span> <span class="toc-text">每种手势的事例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UISwipeGestureRecognizer：滑动（快速移动）"><span class="toc-number">2.1.1.</span> <span class="toc-text">UISwipeGestureRecognizer：滑动（快速移动）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UITapGestureRecognizer：轻点手势（点击）"><span class="toc-number">2.1.2.</span> <span class="toc-text">UITapGestureRecognizer：轻点手势（点击）</span></a></li></ol></li></ol></li></ol>
               </div>
               
-                <h1 id="触摸">触摸</h1><p>触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。</p>
+                <h2 id="触摸">触摸</h2><p>触摸是在UIView上进行的，不能是一个UIResponder对象。触摸是一个UITouch对象，该对象放在一个UIEvent中，每一个UIEvent包含一个或者多个UITouch对象，每一个UITouch对象对应一个手指。<br>系统将UIEvent发送到应用程序上，最后应用程序将其传递给当前一个UIView。</p>
 <p>当用户的手指放在屏幕上就会实现触摸，当手指离开屏幕，触摸就结束，整个触摸可以分为五个阶段。</p>
 <table>
 <thead>
 <tr>
 <th>Began</th>
-<th>手指首次接触屏幕，UITouch实例被创建，该阶段只执行一次   </th>
+<th>手指首次接触屏幕，UITouch实例被创建，该阶段只执行一次</th>
 </tr>
 </thead>
 <tbody>
@@ -182,8 +182,8 @@
 </tbody>
 </table>
 <p>UIView继承了与4个UITouch阶段对应的4中方法，通过该4种方法中的一个或者多个，把UIEvent发送到视图上。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">   <span class="comment">/*首次接触到屏幕*/</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesMoved</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*手指在移动*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesCancelled</span><span class="params">(touches: Set&lt;UITouch&gt;?, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line"> <span class="comment">/*触摸意外终止*/</span>   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesEnded</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*触摸结束*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="手势(UIGestureRecognizer)">手势(UIGestureRecognizer)</h1><p>在iOS开发中除了用上边说到的四中方法来检测用户的触摸事件外，可以用<strong>UIGestureRecognizer</strong>的衍生类来进行判断。这个类被称为手势识别器。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">   <span class="comment">/*首次接触到屏幕*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesMoved</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*手指在移动*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesCancelled</span><span class="params">(touches: Set&lt;UITouch&gt;?, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line"> <span class="comment">/*触摸意外终止*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesEnded</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    <span class="comment">/*触摸结束*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="手势(UIGestureRecognizer)">手势(UIGestureRecognizer)</h2><p>在iOS开发中除了用上边说到的四中方法来检测用户的触摸事件外，可以用<strong>UIGestureRecognizer</strong>的衍生类来进行判断。这个类被称为手势识别器。</p>
 <table>
 <thead>
 <tr>
@@ -250,7 +250,29 @@
 </tr>
 </tbody>
 </table>
-<p><strong>UILongPressGestureRecognizer</strong><br>|minimumPressDuration|需要长按的时间，最小0.5s<br>|:|<br>|numberOfTouchesRequired|需要长按时的手指数<br>|numberOfTapsRequired|需要长按时的单击次数<br>|allowableMovement|手指按住允许拖动的距离</p>
+<p><strong>UILongPressGestureRecognizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>minimumPressDuration</th>
+<th>需要长按的时间，最小0.5s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numberOfTouchesRequired</td>
+<td>需要长按时的手指数</td>
+</tr>
+<tr>
+<td>numberOfTapsRequired</td>
+<td>需要长按时的单击次数</td>
+</tr>
+<tr>
+<td>allowableMovement</td>
+<td>手指按住允许拖动的距离</td>
+</tr>
+</tbody>
+</table>
 <p><strong>UIPinchGestureRecognizer</strong></p>
 <table>
 <thead>
@@ -296,6 +318,12 @@
 </tr>
 </tbody>
 </table>
+<h3 id="每种手势的事例">每种手势的事例</h3><h4 id="UISwipeGestureRecognizer：滑动（快速移动）">UISwipeGestureRecognizer：滑动（快速移动）</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> swipe = <span class="type">UISwipeGestureRecognizer</span>(target: <span class="keyword">self</span>, action: <span class="string">"swipr:"</span>)</span><br><span class="line">swipe.direction = <span class="type">UISwipeGestureRecognizerDirection</span>.<span class="type">Up</span></span><br><span class="line"><span class="keyword">self</span>.view.addGestureRecognizer(swipe)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">swipe</span><span class="params">(recognizer:UISwipeGestureRecognizer)</span></span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"swipe ok"</span>)</span><br><span class="line">        <span class="keyword">let</span> point=recognizer.locationInView(<span class="keyword">self</span>.view)</span><br><span class="line">        <span class="comment">//这个点是滑动的起点</span></span><br><span class="line">        <span class="built_in">print</span>(point.x)</span><br><span class="line">        <span class="built_in">print</span>(point.y)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>注意1：如果UISwipeGestureRecognizer在不指定方向的时候，默认向右滑动才会触发事件。如果要指定方向，需要设置direction属性</p>
+<p>注意2：如果各个方向都要响应怎么办，只要多定义几个UISwipeGestureRecognizer就可以了,将每个方向都包括了</p>
+<p>可以通过numberOfTouchesRequired属性设置触摸点数，比如设置2表示必须两个手指触摸时才会触发</p>
+<h4 id="UITapGestureRecognizer：轻点手势（点击）">UITapGestureRecognizer：轻点手势（点击）</h4><p>（1）可以通过numberOfTouchesRequired属性设置触摸点数，比如设置2表示必须两个手指触摸时才会触发<br>（2）通过numberOfTapsRequired属性设置点击次数，单击设置为1，双击设置为2<br>（3）如果一个控件既监听了单击事件也监听了双击事件，默认当双击事件触发的时候也同时会触发单击事件。如果想双击时不触发单击，需要通过requireGestureRecognizerToFail进行设置<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单击</span></span><br><span class="line">       <span class="keyword">let</span> tapSingle = <span class="type">UITapGestureRecognizer</span>(target: <span class="keyword">self</span>, action: <span class="string">"tapSingeDid"</span>)</span><br><span class="line">       tapSingle.numberOfTapsRequired = <span class="number">1</span></span><br><span class="line">       tapSingle.numberOfTouchesRequired = <span class="number">1</span></span><br><span class="line">       <span class="comment">//双击</span></span><br><span class="line">       <span class="keyword">let</span> tapDouble = <span class="type">UITapGestureRecognizer</span>(target: <span class="keyword">self</span>, action: <span class="string">"tapDoubleDid"</span>)</span><br><span class="line">       tapDouble.numberOfTouchesRequired = <span class="number">1</span></span><br><span class="line">       tapDouble.numberOfTapsRequired = <span class="number">2</span></span><br><span class="line">       <span class="comment">//声明点击事件需要双击事件检测失败后才会执行</span></span><br><span class="line">       tapSingle.requireGestureRecognizerToFail(tapDouble)</span><br><span class="line">       <span class="keyword">self</span>.view.addGestureRecognizer(tapDouble)</span><br><span class="line">       <span class="keyword">self</span>.view.addGestureRecognizer(tapSingle)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="func"><span class="keyword">func</span> <span class="title">tapSingleDid</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="built_in">println</span>(<span class="string">"单击了"</span>)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="func"><span class="keyword">func</span> <span class="title">tapDoubleDid</span><span class="params">(sender:UITapGestureRecognizer)</span></span>&#123;</span><br><span class="line">       <span class="keyword">if</span> sender.view == <span class="keyword">self</span>.view&#123;</span><br><span class="line">               <span class="built_in">println</span>(<span class="string">"双击了"</span>)</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
+<p>其他的大同小异。看看文档就会了。</p>
 
               
             </div>
@@ -303,7 +331,7 @@
               <a href="/2015/06/10/uigestureresognizer/" class="article-date">
   <time datetime="2015-06-10T08:52:13.000Z" itemprop="datePublished">2015-06-10</time>
 </a>
-              <a data-url="http://dowhile.net/2015/06/10/uigestureresognizer/" data-id="cidgor3gm001jjv1x3m3d7tkv" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/06/10/uigestureresognizer/" data-id="cidgqmqgo001j7g1xgdsiu8si" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIGestureRecognizer/">UIGestureRecognizer</a></li></ul>
