@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UIStoryboardSegue神秘之谜 | 这块显卡有点冷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
+push Or model or custom
+今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
+push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+我们我从A转场至B,选择pus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UIStoryboardSegue神秘之谜">
+<meta property="og:url" content="http://dowhile.net/2015/08/19/uidegue/index.html">
+<meta property="og:site_name" content="这块显卡有点冷">
+<meta property="og:description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
+push Or model or custom
+今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
+push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+我们我从A转场至B,选择pus">
+<meta property="og:updated_time" content="2015-08-19T08:54:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UIStoryboardSegue神秘之谜">
+<meta name="twitter:description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
+push Or model or custom
+今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
+push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+我们我从A转场至B,选择pus">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+    <div id="wrap">
+	
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/tags">
+                  
+                  
+
+                
+                  Tags
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/archives">
+                  
+                  
+
+                
+                  Archives
+                </a>
+            
+              <a class="main-nav-link" href="http://weibo.com/71414225">
+                  
+                  
+
+                
+                  WeiBo
+                </a>
+            
+              <a class="main-nav-link" href="https://github.com/dowhilenet">
+                  
+                  
+
+                
+                  Github
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dowhile.net"></form>
+          </div>
+        </div>
+    </div>
+</header>
+
+		<div class="outer">
+		
+
+    <article id="post-uidegue" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/08/19/uidegue/">
+      <h1 class="article-title" itemprop="name">
+        UIStoryboardSegue神秘之谜
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/08/19/uidegue/" class="article-date">
+  <time datetime="2015-08-19T08:08:03.000Z" itemprop="datePublished">2015-08-19</time>
+</a>-->
+        <!-- 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/UIStoryboardSegue/">UIStoryboardSegue</a>
+  </div>
+ -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/08/19/uidegue/">
+      <h1 class="article-title" itemprop="name">
+        UIStoryboardSegue神秘之谜
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#push"><span class="toc-number">1.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#model"><span class="toc-number">2.</span> <span class="toc-text">model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这几种返回的方法不同"><span class="toc-number">3.</span> <span class="toc-text">这几种返回的方法不同</span></a></li></ol>
+              </div>
+              
+                <p>在刚刚进入iOS开发的时候对<code>UIStoryboardSegue</code>一直有个疑惑，到底是该使用哪一种专场方式呢？</p>
+<p><code>push</code> Or <code>model</code> or <code>custom</code></p>
+<p>今天我们来主要探讨一下前两种。<code>push</code> Or <code>model</code>，至于自定义转场会在之后专门来说。</p>
+<h2 id="push">push</h2><p>假如现在我们有两个<strong>ViewControlelr</strong>,ViewControlelrA和ViewControlelrB。</p>
+<p>我们我从A转场至B,选择<code>push</code> 这种方式。然后直接运行，你会发现程序会崩掉的。</p>
+<p>原因在于<code>push</code>这种方法的必须要有UINavigationController,我们在A之前加上navigation之后我们再来运行程序。</p>
+<p>你会发现程序这次不会崩掉的，反而在B的界面上多出了返回的按钮，我们可以直接返回到A。</p>
+<p>我在想可不可以通过其他的方法来返回到A呢？我们可以来试一试。</p>
+<p>我首先想到的是<code>self.dismissViewControllerAnimated</code> 这个方法。</p>
+<p>在B上我们添加了一按钮,当点击这个按钮之后执行上述方法。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">back1</span><span class="params">(sender: UIButton)</span></span> &#123;</span><br><span class="line">  <span class="keyword">self</span>.dismissViewControllerAnimated(<span class="literal">true</span>) &#123; () -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">           <span class="built_in">print</span>(<span class="string">"OK"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>你会发现当你使劲的点击按钮，并没有返回去。说明这个是行不通的。</p>
+<p>那我就换成到了UINavigation的方法<code>popViewControllerAnimated</code><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">back2</span><span class="params">(sender: UIButton)</span></span> &#123;</span><br><span class="line">      <span class="keyword">self</span>.navigationController?.popViewControllerAnimated(<span class="literal">true</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这次呢，果然没有让我失望。</p>
+<p>在成功的喜悦之中我又想到了一个同样也可以返回的方法。</p>
+<p>在A中我们添加方法<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">unwind</span><span class="params">(segue:UIStoryboardSegue)</span></span>&#123;</span><br><span class="line">       <span class="built_in">print</span>(segue.description)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在B中让按钮和这个方法连接起来<br>同样也可以成功。</p>
+<p>说了这么多返回的方法到底有什么区别呢？这个问题我们先在这里提出来。接下里来说说<code>model</code></p>
+<h2 id="model">model</h2><p><code>model</code>就不依赖于navigation了。我们从A到B选择了这种方式之后运行来看看效果。</p>
+<p>你会发现可以顺利的从A来到B，可是问题发生了。回不去了。真尴尬！</p>
+<p>那我们来试试上边刚才说的三种返回的方法来试试。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">back1</span><span class="params">(sender: UIButton)</span></span> &#123;</span><br><span class="line">  <span class="keyword">self</span>.dismissViewControllerAnimated(<span class="literal">true</span>) &#123; () -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">           <span class="built_in">print</span>(<span class="string">"OK"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>这次呢，没有让你失望。这个玩法可以成功的返回去了。</p>
+<p>可是不幸的是:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">back2</span><span class="params">(sender: UIButton)</span></span> &#123;</span><br><span class="line">      <span class="keyword">self</span>.navigationController?.popViewControllerAnimated(<span class="literal">true</span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p> 这个失效了，此时你应该意识到这两个返回的方法的各自用处了吧。</p>
+<p> 那我们还有一种方法呢，看看成不？<br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@IBAction</span> <span class="func"><span class="keyword">func</span> <span class="title">unwind</span><span class="params">(segue:UIStoryboardSegue)</span></span>&#123;</span><br><span class="line">       <span class="built_in">print</span>(segue.description)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 同样在B中还需要设置。不过也是可以成功的。</p>
+<p> 至此呢，也算是完了。可是，<code>model</code> 这种方式可不可以在有navigation的情况下使用呢？</p>
+<p> 我们把刚才第一种情况的转场方式改成<code>model</code></p>
+<p>你会发现同样可以从A到B的，只是B没有顶部的navigation了。</p>
+<h2 id="这几种返回的方法不同">这几种返回的方法不同</h2><p>出了<code>dismissViewControllerAnimated</code>和<code>popViewControllerAnimated</code> 在使用时对有没有navigation有要求之外还有什么不同呢？</p>
+<p>我们到底应该选则哪一个呢？</p>
+<p>在我目前来看如果需要有数据的传输时使用第三种方法是比较方便的。</p>
+<p>未完!!</p>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/08/19/uidegue/" class="article-date">
+  <time datetime="2015-08-19T08:08:03.000Z" itemprop="datePublished">2015-08-19</time>
+</a>
+              <a data-url="http://dowhile.net/2015/08/19/uidegue/" data-id="cidijmcn6001ool1xhlk6y0sa" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/19/uidatepicker2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用UIDatePicker实现倒计时功能</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 这块显卡有点冷<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+	<nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="http://weibo.com/71414225" class="mobile-nav-link">WeiBo</a>
+  
+    <a href="https://github.com/dowhilenet" class="mobile-nav-link">Github</a>
+  
+</nav>
+</div>
+</body>
+</html>
+
