@@ -10,7 +10,7 @@
     <meta name="description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
 push Or model or custom
 今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
-push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+push假如现在我们有两个ViewController,ViewControllerA和ViewControllerB。
 我们我从A转场至B,选择pus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIStoryboardSegue神秘之谜">
@@ -19,15 +19,15 @@ push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB�
 <meta property="og:description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
 push Or model or custom
 今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
-push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+push假如现在我们有两个ViewController,ViewControllerA和ViewControllerB。
 我们我从A转场至B,选择pus">
-<meta property="og:updated_time" content="2015-08-19T08:54:17.000Z">
+<meta property="og:updated_time" content="2015-08-19T13:47:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIStoryboardSegue神秘之谜">
 <meta name="twitter:description" content="在刚刚进入iOS开发的时候对UIStoryboardSegue一直有个疑惑，到底是该使用哪一种专场方式呢？
 push Or model or custom
 今天我们来主要探讨一下前两种。push Or model，至于自定义转场会在之后专门来说。
-push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB。
+push假如现在我们有两个ViewController,ViewControllerA和ViewControllerB。
 我们我从A转场至B,选择pus">
     
     
@@ -165,7 +165,7 @@ push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB�
                 <p>在刚刚进入iOS开发的时候对<code>UIStoryboardSegue</code>一直有个疑惑，到底是该使用哪一种专场方式呢？</p>
 <p><code>push</code> Or <code>model</code> or <code>custom</code></p>
 <p>今天我们来主要探讨一下前两种。<code>push</code> Or <code>model</code>，至于自定义转场会在之后专门来说。</p>
-<h2 id="push">push</h2><p>假如现在我们有两个<strong>ViewControlelr</strong>,ViewControlelrA和ViewControlelrB。</p>
+<h2 id="push">push</h2><p>假如现在我们有两个<strong>ViewController</strong>,ViewControllerA和ViewControllerB。</p>
 <p>我们我从A转场至B,选择<code>push</code> 这种方式。然后直接运行，你会发现程序会崩掉的。</p>
 <p>原因在于<code>push</code>这种方法的必须要有UINavigationController,我们在A之前加上navigation之后我们再来运行程序。</p>
 <p>你会发现程序这次不会崩掉的，反而在B的界面上多出了返回的按钮，我们可以直接返回到A。</p>
@@ -192,7 +192,7 @@ push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB�
 <p> 至此呢，也算是完了。可是，<code>model</code> 这种方式可不可以在有navigation的情况下使用呢？</p>
 <p> 我们把刚才第一种情况的转场方式改成<code>model</code></p>
 <p>你会发现同样可以从A到B的，只是B没有顶部的navigation了。</p>
-<h2 id="这几种返回的方法不同">这几种返回的方法不同</h2><p>出了<code>dismissViewControllerAnimated</code>和<code>popViewControllerAnimated</code> 在使用时对有没有navigation有要求之外还有什么不同呢？</p>
+<h2 id="这几种返回的方法不同">这几种返回的方法不同</h2><p>除了<code>dismissViewControllerAnimated</code>和<code>popViewControllerAnimated</code> 在使用时对有没有navigation有要求之外还有什么不同呢？</p>
 <p>我们到底应该选则哪一个呢？</p>
 <p>在我目前来看如果需要有数据的传输时使用第三种方法是比较方便的。</p>
 <p>未完!!</p>
@@ -203,7 +203,7 @@ push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB�
               <a href="/2015/08/19/uidegue/" class="article-date">
   <time datetime="2015-08-19T08:08:03.000Z" itemprop="datePublished">2015-08-19</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/19/uidegue/" data-id="cidijmcn6001ool1xhlk6y0sa" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/08/19/uidegue/" data-id="cidk3e3f9001v2f1xr3zc1r0r" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -213,6 +213,15 @@ push假如现在我们有两个ViewControlelr,ViewControlelrA和ViewControlelrB�
       
         
 <nav id="article-nav">
+  
+    <a href="/2015/08/20/uiviewframe/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          UIView的frame属性和bounds
+        
+      </div>
+    </a>
   
   
     <a href="/2015/08/19/uidatepicker2/" id="article-nav-older" class="article-nav-link-wrap">

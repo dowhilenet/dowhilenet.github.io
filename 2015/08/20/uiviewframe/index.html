@@ -4,19 +4,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>日期选择控件的用法(UIDataPicker) | 这块显卡有点冷</title>
+    <title>UIView的frame属性和bounds | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="创建一个UIDataPicker12345678910111213141516171819202122232425import UIKitclass ViewController: UIViewController&amp;#123;    override func viewDidLoad() &amp;#123;        super.viewDidLoad()        //创建日期选择器">
+    <meta name="description" content="首先列一下公认的资料：先看到下面的代码你肯定就明白了一些：123456-(CGRect)frame&amp;#123;    return CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height);&amp;#125;-(CGRect)bounds&amp;#123;    return">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日期选择控件的用法(UIDataPicker)">
-<meta property="og:url" content="http://dowhile.net/2015/08/18/uidatapicker/index.html">
+<meta property="og:title" content="UIView的frame属性和bounds">
+<meta property="og:url" content="http://dowhile.net/2015/08/20/uiviewframe/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="创建一个UIDataPicker12345678910111213141516171819202122232425import UIKitclass ViewController: UIViewController&amp;#123;    override func viewDidLoad() &amp;#123;        super.viewDidLoad()        //创建日期选择器">
-<meta property="og:updated_time" content="2015-08-18T01:29:32.000Z">
+<meta property="og:description" content="首先列一下公认的资料：先看到下面的代码你肯定就明白了一些：123456-(CGRect)frame&amp;#123;    return CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height);&amp;#125;-(CGRect)bounds&amp;#123;    return">
+<meta property="og:updated_time" content="2015-08-20T09:55:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日期选择控件的用法(UIDataPicker)">
-<meta name="twitter:description" content="创建一个UIDataPicker12345678910111213141516171819202122232425import UIKitclass ViewController: UIViewController&amp;#123;    override func viewDidLoad() &amp;#123;        super.viewDidLoad()        //创建日期选择器">
+<meta name="twitter:title" content="UIView的frame属性和bounds">
+<meta name="twitter:description" content="首先列一下公认的资料：先看到下面的代码你肯定就明白了一些：123456-(CGRect)frame&amp;#123;    return CGRectMake(self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height);&amp;#125;-(CGRect)bounds&amp;#123;    return">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -101,15 +101,15 @@
 		<div class="outer">
 		
 
-    <article id="post-uidatapicker" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-uiviewframe" class="article article-type-post" itemscope itemprop="blogPost">
       <div class="article-meta">
         
           <header class="article-header">
             
   
-    <a href="/2015/08/18/uidatapicker/">
+    <a href="/2015/08/20/uiviewframe/">
       <h1 class="article-title" itemprop="name">
-        日期选择控件的用法(UIDataPicker)
+        UIView的frame属性和bounds
       </h1>
     </a>
   
@@ -119,12 +119,12 @@
           </header>
         
 
-        <!--<a href="/2015/08/18/uidatapicker/" class="article-date">
-  <time datetime="2015-08-18T01:17:10.000Z" itemprop="datePublished">2015-08-18</time>
+        <!--<a href="/2015/08/20/uiviewframe/" class="article-date">
+  <time datetime="2015-08-20T09:49:43.000Z" itemprop="datePublished">2015-08-20</time>
 </a>-->
         <!-- 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/UIDataPicker/">UIDataPicker</a>
+    <a class="article-category-link" href="/categories/UIView/">UIView</a>
   </div>
  -->
       </div>
@@ -134,9 +134,9 @@
               <!--<header class="article-header">
                 
   
-    <a href="/2015/08/18/uidatapicker/">
+    <a href="/2015/08/20/uiviewframe/">
       <h1 class="article-title" itemprop="name">
-        日期选择控件的用法(UIDataPicker)
+        UIView的frame属性和bounds
       </h1>
     </a>
   
@@ -147,18 +147,22 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个UIDataPicker"><span class="toc-number">1.</span> <span class="toc-text">创建一个UIDataPicker</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先列一下公认的资料："><span class="toc-number">1.</span> <span class="toc-text">首先列一下公认的资料：</span></a></li></ol>
               </div>
               
-                <h2 id="创建一个UIDataPicker">创建一个UIDataPicker</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="type">UIKit</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">//创建日期选择器</span></span><br><span class="line">       <span class="keyword">let</span> dataPicker = <span class="type">UIDatePicker</span>()</span><br><span class="line">        <span class="comment">//将日期选择器区域设置为中文</span></span><br><span class="line">        dataPicker.locale = <span class="type">NSLocale</span>(localeIdentifier: <span class="string">"zh_CN"</span>)</span><br><span class="line">        dataPicker.addTarget(<span class="keyword">self</span>, action: <span class="string">"dataChanged:"</span>, forControlEvents: <span class="type">UIControlEvents</span>.<span class="type">ValueChanged</span>)</span><br><span class="line">        <span class="keyword">self</span>.view.addSubview(dataPicker)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">dataChanged</span><span class="params">(dataPicker:UIDatePicker)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个日期格式器</span></span><br><span class="line">        <span class="keyword">let</span> formatter = <span class="type">NSDateFormatter</span>()</span><br><span class="line">        <span class="comment">// 为日期格式器设置格式字符串</span></span><br><span class="line">        formatter.dateFormat = <span class="string">"yyyy年MM月dd日 HH:mm:ss"</span></span><br><span class="line">        <span class="comment">//使用日期格式器格式化日期、时间</span></span><br><span class="line">        <span class="built_in">print</span>(formatter.stringFromDate(dataPicker.date))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="首先列一下公认的资料：">首先列一下公认的资料：</h2><p>先看到下面的代码你肯定就明白了一些：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="built_in">CGRect</span>)frame&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CGRectMake</span>(<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.x</span>,<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.y</span>,<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>,<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span>);</span><br><span class="line">&#125;</span><br><span class="line">-(<span class="built_in">CGRect</span>)bounds&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>,<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>很明显，bounds的原点是(0,0)点（就是view本身的坐标系统，默认永远都是0，0点，除非认为setbounds），而frame的原点却是任意的（相对于父视图中的坐标位置）。</p>
+<p>frame: 该view在父view坐标系统中的位置和大小。（参照点是，父亲的坐标系统）</p>
+<p>bounds：该view在本地坐标系统中的位置和大小。（参照点是，本地坐标系统，就相当于ViewB自己的坐标系统，以0,0点为起点）</p>
+<p>center：该view的中心点在父view坐标系统中的位置和大小。（参照点是，父亲的坐标系统）</p>
 
               
             </div>
             <footer class="article-footer">
-              <a href="/2015/08/18/uidatapicker/" class="article-date">
-  <time datetime="2015-08-18T01:17:10.000Z" itemprop="datePublished">2015-08-18</time>
+              <a href="/2015/08/20/uiviewframe/" class="article-date">
+  <time datetime="2015-08-20T09:49:43.000Z" itemprop="datePublished">2015-08-20</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/18/uidatapicker/" data-id="cidk3e3fe00232f1xryx5593k" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/08/20/uiviewframe/" data-id="cidk3e3ec00092f1x557tmf3l" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -169,19 +173,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2015/08/18/uistepper/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/20/uinavigationbar/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          微调器或叫步进器（UIStepper）的用法
+          自定义导航栏的背景、标题、返回按钮文字颜色
         
       </div>
     </a>
   
   
-    <a href="/2015/08/18/uipickerview/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/19/uidegue/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">选择框UIPickerView的用法</div>
+      <div class="article-nav-title">UIStoryboardSegue神秘之谜</div>
     </a>
   
 </nav>
