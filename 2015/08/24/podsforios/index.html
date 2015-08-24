@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iOS第三方库资源整理 | 这块显卡有点冷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="SwiftGuide下拉刷新PullToRefresh 可自己定义动画效果
+MJRefresh
+菜单SwiftSideslipLikeQQ 侧菜单
+JSONSwiftyJSON
+JSONCodable
+Decodable
+HTTPPitaya
+Alamofire
+JustHTTP
+Websocketsstarscream
+ImageAFImageHelper
+函数Swiftz
+Dollar
+图像识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS第三方库资源整理">
+<meta property="og:url" content="http://dowhile.net/2015/08/24/podsforios/index.html">
+<meta property="og:site_name" content="这块显卡有点冷">
+<meta property="og:description" content="SwiftGuide下拉刷新PullToRefresh 可自己定义动画效果
+MJRefresh
+菜单SwiftSideslipLikeQQ 侧菜单
+JSONSwiftyJSON
+JSONCodable
+Decodable
+HTTPPitaya
+Alamofire
+JustHTTP
+Websocketsstarscream
+ImageAFImageHelper
+函数Swiftz
+Dollar
+图像识">
+<meta property="og:updated_time" content="2015-08-24T11:52:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS第三方库资源整理">
+<meta name="twitter:description" content="SwiftGuide下拉刷新PullToRefresh 可自己定义动画效果
+MJRefresh
+菜单SwiftSideslipLikeQQ 侧菜单
+JSONSwiftyJSON
+JSONCodable
+Decodable
+HTTPPitaya
+Alamofire
+JustHTTP
+Websocketsstarscream
+ImageAFImageHelper
+函数Swiftz
+Dollar
+图像识">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+    <div id="wrap">
+	
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/tags">
+                  
+                  
+
+                
+                  Tags
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/archives">
+                  
+                  
+
+                
+                  Archives
+                </a>
+            
+              <a class="main-nav-link" href="http://weibo.com/71414225">
+                  
+                  
+
+                
+                  WeiBo
+                </a>
+            
+              <a class="main-nav-link" href="https://github.com/dowhilenet">
+                  
+                  
+
+                
+                  Github
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dowhile.net"></form>
+          </div>
+        </div>
+    </div>
+</header>
+
+		<div class="outer">
+		
+
+    <article id="post-podsforios" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/08/24/podsforios/">
+      <h1 class="article-title" itemprop="name">
+        iOS第三方库资源整理
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/08/24/podsforios/" class="article-date">
+  <time datetime="2015-08-24T11:14:09.000Z" itemprop="datePublished">2015-08-24</time>
+</a>-->
+        <!--  -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/08/24/podsforios/">
+      <h1 class="article-title" itemprop="name">
+        iOS第三方库资源整理
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SwiftGuide"><span class="toc-number">1.</span> <span class="toc-text">SwiftGuide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下拉刷新"><span class="toc-number">2.</span> <span class="toc-text">下拉刷新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#菜单"><span class="toc-number">3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-number">4.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP"><span class="toc-number">5.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Websockets"><span class="toc-number">6.</span> <span class="toc-text">Websockets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">7.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">8.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图像识别"><span class="toc-number">9.</span> <span class="toc-text">图像识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间格式"><span class="toc-number">10.</span> <span class="toc-text">时间格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQLite"><span class="toc-number">11.</span> <span class="toc-text">SQLite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动画"><span class="toc-number">12.</span> <span class="toc-text">动画</span></a></li></ol>
+              </div>
+              
+                <h2 id="SwiftGuide"><a href="https://github.com/ipader/SwiftGuide/blob/master/Featured.md" target="_blank" rel="external">SwiftGuide</a></h2><h2 id="下拉刷新">下拉刷新</h2><p><a href="https://github.com/Yalantis/PullToRefresh/tree/swift_2.0" target="_blank" rel="external">PullToRefresh</a> 可自己定义动画效果</p>
+<p><a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">MJRefresh</a></p>
+<h2 id="菜单">菜单</h2><p><a href="https://github.com/johnlui/SwiftSideslipLikeQQ" target="_blank" rel="external">SwiftSideslipLikeQQ</a> 侧菜单</p>
+<h2 id="JSON">JSON</h2><p><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a></p>
+<p><a href="https://github.com/matthewcheok/JSONCodable" target="_blank" rel="external">JSONCodable</a></p>
+<p><a href="https://github.com/Anviking/Decodable" target="_blank" rel="external">Decodable</a></p>
+<h2 id="HTTP">HTTP</h2><p><a href="https://github.com/johnlui/Pitaya" target="_blank" rel="external">Pitaya</a></p>
+<p><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a></p>
+<p><a href="https://github.com/JustHTTP/Just" target="_blank" rel="external">JustHTTP</a></p>
+<h2 id="Websockets">Websockets</h2><p><a href="https://github.com/daltoniam/starscream" target="_blank" rel="external">starscream</a></p>
+<h2 id="Image">Image</h2><p><a href="https://github.com/melvitax/AFImageHelper" target="_blank" rel="external">AFImageHelper</a></p>
+<h2 id="函数">函数</h2><p><a href="https://github.com/typelift/Swiftz" target="_blank" rel="external">Swiftz</a></p>
+<p><a href="https://github.com/ankurp/Dollar.swift" target="_blank" rel="external">Dollar</a></p>
+<h2 id="图像识别">图像识别</h2><p><a href="https://github.com/gali8/Tesseract-OCR-iOS" target="_blank" rel="external">Tesseract-OCR-iOS</a></p>
+<h2 id="时间格式">时间格式</h2><p><a href="https://github.com/akosma/SwiftMoment" target="_blank" rel="external">SwiftMoment</a></p>
+<p><a href="https://github.com/malcommac/SwiftDate" target="_blank" rel="external">SwiftDate</a></p>
+<h2 id="SQLite">SQLite</h2><p><a href="https://github.com/stephencelis/SQLite.swift" target="_blank" rel="external">SQLite.swift</a></p>
+<h2 id="动画">动画</h2><p><a href="https://github.com/KittenYang/Animations" target="_blank" rel="external">一些动画demo</a></p>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/08/24/podsforios/" class="article-date">
+  <time datetime="2015-08-24T11:14:09.000Z" itemprop="datePublished">2015-08-24</time>
+</a>
+              <a data-url="http://dowhile.net/2015/08/24/podsforios/" data-id="cidpveebw002l8o1xuougv4cq" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS第三方库/">iOS第三方库</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/24/extention/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">为你的扩展起个好的名字(how-to-name-your-extensions)</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 这块显卡有点冷<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+	<nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="http://weibo.com/71414225" class="mobile-nav-link">WeiBo</a>
+  
+    <a href="https://github.com/dowhilenet" class="mobile-nav-link">Github</a>
+  
+</nav>
+</div>
+</body>
+</html>
+

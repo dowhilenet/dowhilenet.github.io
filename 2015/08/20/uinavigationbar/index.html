@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="这块显卡有点冷">
 <meta property="og:description" content="改变NavigationBar的背景颜色去自定义NavigationBar的外观我们需要使用 appearance
 12345678// 整个bar都是红色的了 UINavigationBar.appearance().barTintColor = UIColor.redColor() //barIem的颜色变成了白色原本默认蓝色 UINavigationBar.appearance().tint">
-<meta property="og:updated_time" content="2015-08-20T10:55:30.000Z">
+<meta property="og:updated_time" content="2015-08-20T11:08:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义导航栏的背景、标题、返回按钮文字颜色">
 <meta name="twitter:description" content="改变NavigationBar的背景颜色去自定义NavigationBar的外观我们需要使用 appearance
@@ -154,7 +154,7 @@
               </div>
               
                 <h2 id="改变NavigationBar的背景颜色">改变NavigationBar的背景颜色</h2><p>去自定义NavigationBar的外观我们需要使用 <code>appearance</code></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 整个bar都是红色的了</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().barTintColor = <span class="type">UIColor</span>.redColor()</span><br><span class="line"> <span class="comment">//barIem的颜色变成了白色原本默认蓝色</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().tintColor = <span class="type">UIColor</span>.whiteColor()</span><br><span class="line"> <span class="comment">//半透明</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().translucent = <span class="literal">true</span></span><br><span class="line"> <span class="comment">//UIbarStyle 会改变电池 信号灯的颜色</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().barStyle = <span class="type">UIBarStyle</span>.<span class="type">Default</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 整个bar都是红色的了</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().barTintColor = <span class="type">UIColor</span>.redColor()</span><br><span class="line"> <span class="comment">//barIem的颜色变成了白色原本默认蓝色</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().tintColor = <span class="type">UIColor</span>.whiteColor()</span><br><span class="line"> <span class="comment">//半透明</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().translucent = <span class="literal">true</span></span><br><span class="line"> <span class="comment">//UIbarStyle</span></span><br><span class="line"> <span class="type">UINavigationBar</span>.appearance().barStyle = <span class="type">UIBarStyle</span>.<span class="type">Default</span></span><br></pre></td></tr></table></figure>
 <h2 id="改变NavigationBar_Title的字体">改变NavigationBar  Title的字体</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> let barFont = <span class="built_in">UIFont</span>(name: <span class="string">"AvenirNextCondensed-DemiBold"</span>, size: <span class="number">22.0</span>) &#123;</span><br><span class="line">    <span class="built_in">UINavigationBar</span><span class="variable">.appearance</span>()<span class="variable">.titleTextAttributes</span> =</span><br><span class="line">[<span class="built_in">NSForegroundColorAttributeName</span>:<span class="built_in">UIColor</span><span class="variable">.whiteColor</span>(), <span class="built_in">NSFontAttributeName</span>:barFont]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="改变返回按钮的文字">改变返回按钮的文字</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果你想改变某个控制器的返回按钮样式</span></span><br><span class="line"> <span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// 返回按钮没有了文字,你可以去title里设定你自己需要的</span></span><br><span class="line">        <span class="keyword">self</span>.navigationItem.backBarButtonItem = <span class="type">UIBarButtonItem</span>(title: <span class="string">""</span>, style: .<span class="type">Plain</span>,</span><br><span class="line">          target: <span class="literal">nil</span>, action: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="使用图片作为导航栏标题">使用图片作为导航栏标题</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self<span class="class">.navigationItem</span><span class="class">.titleView</span> = <span class="function"><span class="title">UIView</span><span class="params">(<span class="string">"..."</span>)</span></span></span><br></pre></td></tr></table></figure>
@@ -168,7 +168,7 @@
               <a href="/2015/08/20/uinavigationbar/" class="article-date">
   <time datetime="2015-08-20T09:55:59.000Z" itemprop="datePublished">2015-08-20</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/20/uinavigationbar/" data-id="cidk3e3ex00192f1xo72ft0tf" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/08/20/uinavigationbar/" data-id="cidpveeb700198o1xezwohet0" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -178,6 +178,15 @@
       
         
 <nav id="article-nav">
+  
+    <a href="/2015/08/22/iosapi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iOS框架简介
+        
+      </div>
+    </a>
   
   
     <a href="/2015/08/20/uiviewframe/" id="article-nav-older" class="article-nav-link-wrap">

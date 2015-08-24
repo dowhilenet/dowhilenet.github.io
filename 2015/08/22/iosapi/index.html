@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iOS框架简介 | 这块显卡有点冷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
+    <meta name="description" content="iOS API简介
+Cocoa Touch|框架|说明||-||Address Book UI|访问用户的联系人信息|Event Kit UI|访问用户的日历事件数据|ReplayKit|ReplayKit可以让玩家在游戏中录制游戏视频，并且可以给这些视频添加语音评论并且通过社交网络分享出去。|iAD|在应用中嵌入广告|Map Kit|在应用程序中嵌入地图和地理信息编码等|Message UI|提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS框架简介">
+<meta property="og:url" content="http://dowhile.net/2015/08/22/iosapi/index.html">
+<meta property="og:site_name" content="这块显卡有点冷">
+<meta property="og:description" content="iOS API简介
+Cocoa Touch|框架|说明||-||Address Book UI|访问用户的联系人信息|Event Kit UI|访问用户的日历事件数据|ReplayKit|ReplayKit可以让玩家在游戏中录制游戏视频，并且可以给这些视频添加语音评论并且通过社交网络分享出去。|iAD|在应用中嵌入广告|Map Kit|在应用程序中嵌入地图和地理信息编码等|Message UI|提">
+<meta property="og:updated_time" content="2015-08-22T02:58:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS框架简介">
+<meta name="twitter:description" content="iOS API简介
+Cocoa Touch|框架|说明||-||Address Book UI|访问用户的联系人信息|Event Kit UI|访问用户的日历事件数据|ReplayKit|ReplayKit可以让玩家在游戏中录制游戏视频，并且可以给这些视频添加语音评论并且通过社交网络分享出去。|iAD|在应用中嵌入广告|Map Kit|在应用程序中嵌入地图和地理信息编码等|Message UI|提">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    
+
+    <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div id="container"> 
+    <div id="wrap">
+	
+
+<header id="header" class="hdpage">
+    
+    <div id="header-outer" class="outer">
+        
+        <div id="header-inner" class="inner">
+          <nav id="main-nav">
+            <a id="main-nav-toggle" class="nav-icon"></a>
+            
+              <a class="main-nav-link" href="/">
+                  
+                  
+
+                
+                  Home
+                </a>
+            
+              <a class="main-nav-link" href="/tags">
+                  
+                  
+
+                
+                  Tags
+                </a>
+            
+              <a class="main-nav-link" href="/category">
+                  
+                  
+
+                
+                  Category
+                </a>
+            
+              <a class="main-nav-link" href="/archives">
+                  
+                  
+
+                
+                  Archives
+                </a>
+            
+              <a class="main-nav-link" href="http://weibo.com/71414225">
+                  
+                  
+
+                
+                  WeiBo
+                </a>
+            
+              <a class="main-nav-link" href="https://github.com/dowhilenet">
+                  
+                  
+
+                
+                  Github
+                </a>
+            
+          </nav>
+          <nav id="sub-nav">
+            
+            <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+          </nav>
+          <div id="search-form-wrap">
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dowhile.net"></form>
+          </div>
+        </div>
+    </div>
+</header>
+
+		<div class="outer">
+		
+
+    <article id="post-iosapi" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="article-meta">
+        
+          <header class="article-header">
+            
+  
+    <a href="/2015/08/22/iosapi/">
+      <h1 class="article-title" itemprop="name">
+        iOS框架简介
+      </h1>
+    </a>
+  
+
+
+
+          </header>
+        
+
+        <!--<a href="/2015/08/22/iosapi/" class="article-date">
+  <time datetime="2015-08-22T02:54:02.000Z" itemprop="datePublished">2015-08-22</time>
+</a>-->
+        <!-- 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOSAPI/">iOSAPI</a>
+  </div>
+ -->
+      </div>
+      <div class="article-inner">
+            
+            
+              <!--<header class="article-header">
+                
+  
+    <a href="/2015/08/22/iosapi/">
+      <h1 class="article-title" itemprop="name">
+        iOS框架简介
+      </h1>
+    </a>
+  
+
+
+
+              </header>-->
+            
+            <div class="article-entry" itemprop="articleBody">
+              <div class="page-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS_API简介"><span class="toc-number">1.</span> <span class="toc-text">iOS API简介</span></a></li></ol>
+              </div>
+              
+                <h2 id="iOS_API简介">iOS API简介</h2><ol>
+<li>Cocoa Touch<br>|框架|说明|<br>|-|<br>|Address Book UI|访问用户的联系人信息<br>|Event Kit UI|访问用户的日历事件数据<br>|ReplayKit|ReplayKit可以让玩家在游戏中录制游戏视频，并且可以给这些视频添加语音评论并且通过社交网络分享出去。<br>|iAD|在应用中嵌入广告<br>|Map Kit|在应用程序中嵌入地图和地理信息编码等<br>|Message UI|提供与发送邮件相关的API<br>|Twitter|提供发送Twitter的接口<br>|ContactsUI|联系方式UI<br>|NotificationCenter|通知中心<br>|PhotosUI|iOS8相册UI<br>|WatchKit|手表UI<br>|UIKit|提供UI类</li>
+</ol>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIKit_Framework/" target="_blank" rel="external">UIKit</a></p>
+<ol>
+<li>Media Layer<br>|框架|说明<br>|—-|<br>|Assets Library|提供用户的图片和视频的接口<br>|Audio Tool Box|录制或播放音频、音频流以及格式转换<br>|AudioUnit|提供实用内置音频单元服务、以及音频处理模块<br>|AVFoundation|提供播放与录制音频和视频的Objective-C接口<br>|CoreAudio|提供录制、制作、播放音频的C语言接口<br>|CoreAudioKit|<br>|CoreGraphics|提供Quartz 2D接口<br>|CoreImage|提供操作视频和静态图像的接口<br>|CoreMIDI|提供用于处理MIDI数据低层的API<br>|CoreText|提供渲染文本和处理字体的简单、高效的C语言接口<br>|CoreVideo|提供用于处理音频和视频的API<br>|Image I/O|包含一些读写图像数据类<br>|Media Player|包含全屏播放接口</li>
+</ol>
+<p>等等…..</p>
+<ol>
+<li>Core Services Layer<br>提供iCloud、应用内购买、SQLite数据库和XML技术等技术</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScriptCore.framework</td>
+<td>提供了基于Objective-C语言封装的标准JavaScript对象,通过该框架可以实现Objective-C与JavaScript之间的相互调用</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>提供社交网络访问API,中国区提供新浪微博API</td>
+</tr>
+<tr>
+<td>SystemConfiguration</td>
+<td>用于确定设备的网络配置(例如,使用该框架判断Wi-Fi或者蜂窝连接是否正在使用 中),也可以用于判断某个主机服务是否可以使用</td>
+</tr>
+<tr>
+<td>CFNetwork</td>
+<td>提供了访问Wi-Fi网络和蜂窝电话网络的API</td>
+</tr>
+<tr>
+<td>Core Location</td>
+<td>提供定位服务的API</td>
+</tr>
+</tbody>
+</table>
+<p>等等….</p>
+<p>更多关于ios框架的说明请看这篇<a href="http://blog.csdn.net/yuhuangc/article/details/7575519" target="_blank" rel="external">博客</a>，可能和最新的有些差别。可以去官网查看</p>
+
+              
+            </div>
+            <footer class="article-footer">
+              <a href="/2015/08/22/iosapi/" class="article-date">
+  <time datetime="2015-08-22T02:54:02.000Z" itemprop="datePublished">2015-08-22</time>
+</a>
+              <a data-url="http://dowhile.net/2015/08/22/iosapi/" data-id="cidpveec0002t8o1x0l9ct4tl" class="article-share-link">Share</a>
+              
+              
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+            </footer>
+      </div>
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2015/08/24/extention/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          为你的扩展起个好的名字(how-to-name-your-extensions)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/20/uinavigationbar/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自定义导航栏的背景、标题、返回按钮文字颜色</div>
+    </a>
+  
+</nav>
+
+      
+    </article>
+    <script type="text/javascript">
+      window.onscroll = function(){ 
+        $(function(){
+          var $toc = $('.page-toc'),
+              $article = $('.article-entry')
+              toc_top = $toc.offset().top
+              tocsub_width = $toc.children().width()
+              article_height = $article.children().height()
+              scroll_top = document.body.scrollTop
+              screen_h = $(window).height()
+              footer_top = $('.article-footer').offset().top - $(window).height()
+              if(toc_top&&scroll_top&&scroll_top>toc_top&&scroll_top<footer_top){
+                $toc.children().css({
+                  "position": "fixed",
+                  "height": (screen_h -20)+'px',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',tocsub_width+'px')
+              }else{
+                $toc.children().css({
+                  "position": "relative",
+                  "height":'inherit',
+                  "overflow": "auto"
+                })
+                $article.css('margin-right',0+'px')
+              }
+        })
+      } 
+    </script>
+
+
+
+
+
+
+
+
+		</div>
+		<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; 2015 这块显卡有点冷<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  	</div>
+	<nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/category" class="mobile-nav-link">Category</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="http://weibo.com/71414225" class="mobile-nav-link">WeiBo</a>
+  
+    <a href="https://github.com/dowhilenet" class="mobile-nav-link">Github</a>
+  
+</nav>
+</div>
+</body>
+</html>
+
