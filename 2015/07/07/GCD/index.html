@@ -17,7 +17,7 @@
 <meta property="og:description" content="多线程编程多线程是实现单个应用程序内多个代码的执行路径。在每个应用程序的内部都会存在一个或者多个执行线程，同时或者几乎同一时间里执行不同的任务。Swift中并没有使用新的一套线程，而是继续使用Objec-C原有的一套线程，包括三种多线程编程技术。
  1、 NSThread轻量级最轻，但需要自己管理线程的生命周期和线程的同步。线程同步对数据枷锁会有一定的系统开销。
 2、Cocoa NSOperati">
-<meta property="og:updated_time" content="2015-07-06T17:01:29.000Z">
+<meta property="og:updated_time" content="2015-08-28T01:48:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发中的多线程编程">
 <meta name="twitter:description" content="多线程编程多线程是实现单个应用程序内多个代码的执行路径。在每个应用程序的内部都会存在一个或者多个执行线程，同时或者几乎同一时间里执行不同的任务。Swift中并没有使用新的一套线程，而是继续使用Objec-C原有的一套线程，包括三种多线程编程技术。
@@ -161,6 +161,10 @@
 <p>2、<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/" target="_blank" rel="external">Cocoa NSOperation</a>（NSOperation和NSOperationQueue）<br>Cocoa NSOperation不需要关心线程管理和数据同步的事情，可以把精力放在自己需要执行的操作上。<br>相关类有NSOperation和NSOperationQueue。<br> 其中NSOperation是个抽象类，使用它必须使用它的子类，可以实现它或者使用它定义好的两个子类：<br>NSInvocationOperation和NSBlockOperation。<br>创建NSOperation子类的对象，把对象添加到NSOperationQueue队列里执行。</p>
 <p>3、<a href="https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/" target="_blank" rel="external">Grand Center Dispatch</a><br>GCD是Apple开发的一个多核线程的解决方法。<br>GCD是一个代替上边方法的一种高效强大的技术。其抽象度最高，使用简单，是Apple最推荐使用的。</p>
 <h2 id="简单的了解Grand_Center_Dispatch">简单的了解Grand Center Dispatch</h2><p>Grand Center Dispath是apple开发的一个多核编程的解决方法，基本概念就是dispatch queue(调度队列)，queue是一个对象，它可以接受任务，并将任务以先到先执行的顺序来执行。<br>dispatch queue 可以是并发的或者串行的。GCD是一项跨时代的技术，纯C语言、但是又融有面向对象思想、基于Block，<br>它用我们难以置信的简洁方法实现了极为复杂繁琐的多线程编程。</p>
+<p><a href="https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/#//apple_ref/c/func/dispatch_apply" target="_blank" rel="external">Grand Central Dispatch (GCD) Reference</a></p>
+<p><a href="http://www.jianshu.com/p/af3c666685ba" target="_blank" rel="external">iOS 多线程—基础</a></p>
+<p><a href="http://www.jianshu.com/p/be70bd238af0" target="_blank" rel="external">iOS 多线程—GCD</a></p>
+<p><a href="http://segmentfault.com/a/1190000003101343" target="_blank" rel="external">iOS 详细介绍 GCD</a></p>
 
               
             </div>
@@ -168,7 +172,7 @@
               <a href="/2015/07/07/GCD/" class="article-date">
   <time datetime="2015-07-06T16:48:02.000Z" itemprop="datePublished">2015-07-07</time>
 </a>
-              <a data-url="http://dowhile.net/2015/07/07/GCD/" data-id="ciduwjgpo0057ig1xoble89p4" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/07/07/GCD/" data-id="ciduzd4sg00571n1xby2ctaz6" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GCD/">GCD</a></li></ul>
