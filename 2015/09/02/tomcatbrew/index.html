@@ -4,19 +4,34 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>开关按钮UISwitch的用法 | 这块显卡有点冷</title>
+    <title>Brew Tomcat | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
+    <meta name="description" content="首先保证brew命令能够正常使用；
+
+搜索tomcat是否存在：brew search tomcat
+安装tomcat：brew install tomcat
+检查是否安装成功：catalina -h
+运行tomcat：catalina runTomcat的默认端口是8080，如果运行成功可通过http://localhost:8080访问webapp的根目录(CATALINA_HOME)为:/u">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开关按钮UISwitch的用法">
-<meta property="og:url" content="http://dowhile.net/2015/08/16/uiswitch/index.html">
+<meta property="og:title" content="Brew Tomcat">
+<meta property="og:url" content="http://dowhile.net/2015/09/02/tomcatbrew/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
-<meta property="og:updated_time" content="2015-08-16T01:53:12.000Z">
+<meta property="og:description" content="首先保证brew命令能够正常使用；
+
+搜索tomcat是否存在：brew search tomcat
+安装tomcat：brew install tomcat
+检查是否安装成功：catalina -h
+运行tomcat：catalina runTomcat的默认端口是8080，如果运行成功可通过http://localhost:8080访问webapp的根目录(CATALINA_HOME)为:/u">
+<meta property="og:updated_time" content="2015-09-02T05:22:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开关按钮UISwitch的用法">
-<meta name="twitter:description" content="创建开关，并且监听他的值的改变:12345678910111213141516171819class ViewController: UIViewController &amp;#123;    var uiswitch:UISwitch!;    override func viewDidLoad() &amp;#123;            super.viewDidLoad()            ui">
+<meta name="twitter:title" content="Brew Tomcat">
+<meta name="twitter:description" content="首先保证brew命令能够正常使用；
+
+搜索tomcat是否存在：brew search tomcat
+安装tomcat：brew install tomcat
+检查是否安装成功：catalina -h
+运行tomcat：catalina runTomcat的默认端口是8080，如果运行成功可通过http://localhost:8080访问webapp的根目录(CATALINA_HOME)为:/u">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -101,15 +116,15 @@
 		<div class="outer">
 		
 
-    <article id="post-uiswitch" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-tomcatbrew" class="article article-type-post" itemscope itemprop="blogPost">
       <div class="article-meta">
         
           <header class="article-header">
             
   
-    <a href="/2015/08/16/uiswitch/">
+    <a href="/2015/09/02/tomcatbrew/">
       <h1 class="article-title" itemprop="name">
-        开关按钮UISwitch的用法
+        Brew Tomcat
       </h1>
     </a>
   
@@ -119,12 +134,12 @@
           </header>
         
 
-        <!--<a href="/2015/08/16/uiswitch/" class="article-date">
-  <time datetime="2015-08-16T01:44:56.000Z" itemprop="datePublished">2015-08-16</time>
+        <!--<a href="/2015/09/02/tomcatbrew/" class="article-date">
+  <time datetime="2015-09-02T05:22:08.000Z" itemprop="datePublished">2015-09-02</time>
 </a>-->
         <!-- 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/UISwitch/">UISwitch</a>
+    <a class="article-category-link" href="/categories/Tomcat/">Tomcat</a>
   </div>
  -->
       </div>
@@ -134,9 +149,9 @@
               <!--<header class="article-header">
                 
   
-    <a href="/2015/08/16/uiswitch/">
+    <a href="/2015/09/02/tomcatbrew/">
       <h1 class="article-title" itemprop="name">
-        开关按钮UISwitch的用法
+        Brew Tomcat
       </h1>
     </a>
   
@@ -150,18 +165,24 @@
                 
               </div>
               
-                <p>创建开关，并且监听他的值的改变:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> uiswitch:<span class="type">UISwitch</span>!;</span><br><span class="line">    <span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">            <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">            uiswitch = <span class="type">UISwitch</span>()</span><br><span class="line">            <span class="comment">//设置位置（开关大小无法设置）</span></span><br><span class="line">            uiswitch.center=<span class="type">CGPointMake</span>(<span class="number">100</span>,<span class="number">50</span>);</span><br><span class="line">            <span class="comment">//设置默认值</span></span><br><span class="line">            uiswitch.on=<span class="literal">true</span>;</span><br><span class="line">            uiswitch.addTarget(<span class="keyword">self</span>, action: <span class="type">Selector</span>(<span class="string">"switchDidChange"</span>),</span><br><span class="line">            forControlEvents:<span class="type">UIControlEvents</span>.<span class="type">ValueChanged</span>)</span><br><span class="line">            <span class="keyword">self</span>.view.addSubview(uiswitch);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">switchDidChange</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="comment">//打印当前值</span></span><br><span class="line">            <span class="built_in">println</span>(uiswitch.on)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <p>首先保证brew命令能够正常使用；</p>
+<ol>
+<li>搜索tomcat是否存在：<br>brew search tomcat</li>
+<li>安装tomcat：<br>brew install tomcat</li>
+<li>检查是否安装成功：<br>catalina -h</li>
+<li>运行tomcat：<br>catalina run<br>Tomcat的默认端口是8080，如果运行成功可通过<a href="http://localhost:8080访问" target="_blank" rel="external">http://localhost:8080访问</a><br>webapp的根目录(CATALINA_HOME)为:/usr/local/Cellar/tomcat/7.0.33/libexec/webapps/ROOT/</li>
+</ol>
 
               
             </div>
             <footer class="article-footer">
-              <a href="/2015/08/16/uiswitch/" class="article-date">
-  <time datetime="2015-08-16T01:44:56.000Z" itemprop="datePublished">2015-08-16</time>
+              <a href="/2015/09/02/tomcatbrew/" class="article-date">
+  <time datetime="2015-09-02T05:22:08.000Z" itemprop="datePublished">2015-09-02</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/16/uiswitch/" data-id="cie2c8zx6000t7hs6oogpazih" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/09/02/tomcatbrew/" data-id="cie2c8zy8002n7hs6nm2n9p04" class="article-share-link">Share</a>
               
               
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tomcat/">Tomcat</a></li></ul>
 
             </footer>
       </div>
@@ -169,19 +190,10 @@
         
 <nav id="article-nav">
   
-    <a href="/2015/08/16/UItextview/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          多行文本输入框UITextView的用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/15/uitexfield/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/28/cacheurl/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">文本输入框(UITextField)的用法</div>
+      <div class="article-nav-title">iOS开发网络篇—数据缓存</div>
     </a>
   
 </nav>
