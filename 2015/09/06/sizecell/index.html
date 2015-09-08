@@ -7,19 +7,16 @@
     <title>理解iOS 8中的Self Sizing Cells和Dynamic Type | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？
-因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0 就可以了。">
+    <meta name="description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0就可以了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解iOS 8中的Self Sizing Cells和Dynamic Type">
 <meta property="og:url" content="http://dowhile.net/2015/09/06/sizecell/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？
-因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0 就可以了。">
-<meta property="og:updated_time" content="2015-09-06T03:01:16.000Z">
+<meta property="og:description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0就可以了。">
+<meta property="og:updated_time" content="2015-09-06T10:01:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解iOS 8中的Self Sizing Cells和Dynamic Type">
-<meta name="twitter:description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？
-因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0 就可以了。">
+<meta name="twitter:description" content="参考参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。是否能对系统中原本的cell添加这个功能呢？因为UITableViewAutomaticDimension是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的numberOfLines属性设置为0就可以了。">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -153,8 +150,7 @@
                 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li></ol>
               </div>
               
-                <h2 id="参考"><a href="http://www.cocoachina.com/cms/wap.php?action=article&amp;id=9717" target="_blank" rel="external">参考</a></h2><p>参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。<br>是否能对系统中原本的cell添加这个功能呢？</p>
-<p>因为<code>UITableViewAutomaticDimension</code>是基于Auto Layout的。你觉得可能需要对<br>自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的<br><code>numberOfLines</code>属性设置为0 就可以了。</p>
+                <h2 id="参考"><a href="http://www.cocoachina.com/cms/wap.php?action=article&amp;id=9717" target="_blank" rel="external">参考</a></h2><p>参考中的文章介绍的很清楚了，不过是对自己定义的cell填加自定义大小的功能。<br>是否能对系统中原本的cell添加这个功能呢？因为<code>UITableViewAutomaticDimension</code>是基于Auto Layout的。你觉得可能需要对自定义的添加Auto Layout。我发现其实苹果已经把这个实现了。我们只需要将Lable的<code>numberOfLines</code>属性设置为0就可以了。</p>
 
               
             </div>
@@ -162,7 +158,7 @@
               <a href="/2015/09/06/sizecell/" class="article-date">
   <time datetime="2015-09-06T02:46:59.000Z" itemprop="datePublished">2015-09-06</time>
 </a>
-              <a data-url="http://dowhile.net/2015/09/06/sizecell/" data-id="cie7wyggb0037ch1xatfhr90d" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/09/06/sizecell/" data-id="cieaooyjw003bly1x8x7eom59" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -172,6 +168,15 @@
       
         
 <nav id="article-nav">
+  
+    <a href="/2015/09/06/statictableview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Static Table View and Photo Library
+        
+      </div>
+    </a>
   
   
     <a href="/2015/09/02/tomcatbrew/" id="article-nav-older" class="article-nav-link-wrap">

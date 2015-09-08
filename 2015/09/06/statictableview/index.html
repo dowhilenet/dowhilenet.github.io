@@ -4,19 +4,28 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>进度条UIProgressView的用法 | 这块显卡有点冷</title>
+    <title>Static Table View and Photo Library | 这块显卡有点冷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="baidu-site-verification" content="1ZsVVOmjoT" />
-    <meta name="description" content="创建进度条1234let progressView = progressView = UIProgressView(progressViewStyle:UIProgressViewStyle.Default)progressView.center = self.view.centerprogressView.progres s= 0.5 //默认进度50%self.view.addSubview(">
+    <meta name="description" content="我们拖出来一个tableView,把它的Content属性选择为Static Cells
+我们再创建一个继承自UITableViewController的子类，用来和刚才拖出来的TableView进行绑定。
+我们在新创建的UITableViewController中来设置一些东西。
+123456789101112override func numberOfSectionsInTableView(t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进度条UIProgressView的用法">
-<meta property="og:url" content="http://dowhile.net/2015/08/16/uiprogressview/index.html">
+<meta property="og:title" content="Static Table View and Photo Library">
+<meta property="og:url" content="http://dowhile.net/2015/09/06/statictableview/index.html">
 <meta property="og:site_name" content="这块显卡有点冷">
-<meta property="og:description" content="创建进度条1234let progressView = progressView = UIProgressView(progressViewStyle:UIProgressViewStyle.Default)progressView.center = self.view.centerprogressView.progres s= 0.5 //默认进度50%self.view.addSubview(">
-<meta property="og:updated_time" content="2015-08-16T02:59:22.000Z">
+<meta property="og:description" content="我们拖出来一个tableView,把它的Content属性选择为Static Cells
+我们再创建一个继承自UITableViewController的子类，用来和刚才拖出来的TableView进行绑定。
+我们在新创建的UITableViewController中来设置一些东西。
+123456789101112override func numberOfSectionsInTableView(t">
+<meta property="og:updated_time" content="2015-09-07T05:03:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="进度条UIProgressView的用法">
-<meta name="twitter:description" content="创建进度条1234let progressView = progressView = UIProgressView(progressViewStyle:UIProgressViewStyle.Default)progressView.center = self.view.centerprogressView.progres s= 0.5 //默认进度50%self.view.addSubview(">
+<meta name="twitter:title" content="Static Table View and Photo Library">
+<meta name="twitter:description" content="我们拖出来一个tableView,把它的Content属性选择为Static Cells
+我们再创建一个继承自UITableViewController的子类，用来和刚才拖出来的TableView进行绑定。
+我们在新创建的UITableViewController中来设置一些东西。
+123456789101112override func numberOfSectionsInTableView(t">
     
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
@@ -101,15 +110,15 @@
 		<div class="outer">
 		
 
-    <article id="post-uiprogressview" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-statictableview" class="article article-type-post" itemscope itemprop="blogPost">
       <div class="article-meta">
         
           <header class="article-header">
             
   
-    <a href="/2015/08/16/uiprogressview/">
+    <a href="/2015/09/06/statictableview/">
       <h1 class="article-title" itemprop="name">
-        进度条UIProgressView的用法
+        Static Table View and Photo Library
       </h1>
     </a>
   
@@ -119,12 +128,12 @@
           </header>
         
 
-        <!--<a href="/2015/08/16/uiprogressview/" class="article-date">
-  <time datetime="2015-08-16T02:51:41.000Z" itemprop="datePublished">2015-08-16</time>
+        <!--<a href="/2015/09/06/statictableview/" class="article-date">
+  <time datetime="2015-09-06T10:24:54.000Z" itemprop="datePublished">2015-09-06</time>
 </a>-->
         <!-- 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/UIProgressView/">UIProgressView</a>
+    <a class="article-category-link" href="/categories/StaticTableView/">StaticTableView</a>
   </div>
  -->
       </div>
@@ -134,9 +143,9 @@
               <!--<header class="article-header">
                 
   
-    <a href="/2015/08/16/uiprogressview/">
+    <a href="/2015/09/06/statictableview/">
       <h1 class="article-title" itemprop="name">
-        进度条UIProgressView的用法
+        Static Table View and Photo Library
       </h1>
     </a>
   
@@ -147,20 +156,21 @@
             
             <div class="article-entry" itemprop="articleBody">
               <div class="page-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建进度条"><span class="toc-number">1.</span> <span class="toc-text">创建进度条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置进度同时设置动画"><span class="toc-number">2.</span> <span class="toc-text">设置进度同时设置动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改变进度条颜色"><span class="toc-number">3.</span> <span class="toc-text">改变进度条颜色</span></a></li></ol>
+                
               </div>
               
-                <h2 id="创建进度条">创建进度条</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> progressView = progressView = <span class="type">UIProgressView</span>(progressViewStyle:<span class="type">UIProgressViewStyle</span>.<span class="type">Default</span>)</span><br><span class="line">progressView.center = <span class="keyword">self</span>.view.center</span><br><span class="line">progressView.progres s= <span class="number">0.5</span> <span class="comment">//默认进度50%</span></span><br><span class="line"><span class="keyword">self</span>.view.addSubview(progressView)</span><br></pre></td></tr></table></figure>
-<h2 id="设置进度同时设置动画">设置进度同时设置动画</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progressView.setProgress(<span class="number">0.8</span>,animated:<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="改变进度条颜色">改变进度条颜色</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">progressView.progressTintColor=UIColor.<span class="function"><span class="title">greenColor</span><span class="params">()</span></span>  <span class="comment">//已有进度颜色</span></span><br><span class="line">progressView.trackTintColor=UIColor.<span class="function"><span class="title">blueColor</span><span class="params">()</span></span>  <span class="comment">//剩余进度颜色（即进度槽颜色）</span></span><br></pre></td></tr></table></figure>
+                <p>我们拖出来一个<code>tableView</code>,把它的<code>Content</code>属性选择为<code>Static Cells</code></p>
+<p>我们再创建一个继承自<code>UITableViewController</code>的子类，用来和刚才拖出来的<code>TableView</code>进行绑定。</p>
+<p>我们在新创建的<code>UITableViewController</code>中来设置一些东西。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">numberOfSectionsInTableView</span><span class="params">(tableView: UITableView!)</span></span> -\&gt; <span class="type">Int</span> &#123;</span><br><span class="line"><span class="comment">// #warning Potentially incomplete method implementation.</span></span><br><span class="line"><span class="comment">// Return the number of sections.</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(tableView: UITableView!, numberOfRowsInSection section: Int)</span></span> -\&gt; <span class="type">Int</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// #warning Incomplete method implementation.</span></span><br><span class="line"><span class="comment">// Return the number of rows in the section.</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
               
             </div>
             <footer class="article-footer">
-              <a href="/2015/08/16/uiprogressview/" class="article-date">
-  <time datetime="2015-08-16T02:51:41.000Z" itemprop="datePublished">2015-08-16</time>
+              <a href="/2015/09/06/statictableview/" class="article-date">
+  <time datetime="2015-09-06T10:24:54.000Z" itemprop="datePublished">2015-09-06</time>
 </a>
-              <a data-url="http://dowhile.net/2015/08/16/uiprogressview/" data-id="cieaooyip001dly1x61ctsgrp" class="article-share-link">Share</a>
+              <a data-url="http://dowhile.net/2015/09/06/statictableview/" data-id="cieaooyju0037ly1xmwyjgqcj" class="article-share-link">Share</a>
               
               
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOSUI/">iOSUI</a></li></ul>
@@ -171,19 +181,10 @@
         
 <nav id="article-nav">
   
-    <a href="/2015/08/16/uislider/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          滑块UISlider的用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/16/uiimageview/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/09/06/sizecell/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">图像控件UIImageView的用法</div>
+      <div class="article-nav-title">理解iOS 8中的Self Sizing Cells和Dynamic Type</div>
     </a>
   
 </nav>
