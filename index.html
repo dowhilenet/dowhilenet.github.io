@@ -1,62 +1,61 @@
-
 <!DOCTYPE HTML>
 
 <html>
 	<head>
 		<title>这块显卡有点冷</title>
 		<meta charset="utf-8" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		 <meta name="description" content="这快显卡有点冷">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="这块显卡有点冷">
   		<meta name="keywords" content="swift ios">
-
-		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-loading">
+	<body>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.png" alt="" /></span>
-							<h1>这块显卡有点冷</h1>
-							<p>Stay hungry Stay foolish</p>
-						</header>
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>这块显卡有点冷</h1>
+								<p>Stay hungry Stay foolish</p>
+							</div>
+						</div>
+						<nav>
+
+								<ul >
+									<li><a href="http://dowhile.net/blog" class="icon fa-book"><span class="label">Blog</span></a></li>
+									<li><a href="https://twitter.com/1414225Xiaolei" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="http://weibo.com/71414225" class="icon fa-weibo"><span class="label">Weibo</span></a></li>
+									<li><a href="https://github.com/dowhilenet" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
 						
-						<footer>
-							<ul class="icons">
-								<li><a href="http://dowhile.net/blog" class="fa-book">Blog</a></li>
-								<li><a href="https://twitter.com/1414225Xiaolei" class="fa-twitter">Twitter</a></li>
-								<li><a href="https://github.com/dowhilenet" class="fa-github">Github</a></li>
-								<li><a href="http://weibo.com/71414225" class="fa-weibo">Weibo</a></li>
-							</ul>
-						</footer>
-					</section>
+						</nav>
+					</header>
+
+		
 
 				<!-- Footer -->
 					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy;这块显卡有点冷</li>
-							<li>Design: <a href="#">dowhile.net</a></li>
-						</ul>
+						<p class="copyright">&copy; 这块显卡有点冷 <a href="http://dowhile.net">dowhile.net</a>.</p>
 					</footer>
 
 			</div>
 
+		<!-- BG -->
+			<div id="bg"></div>
+
 		<!-- Scripts -->
-			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
