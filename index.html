@@ -1,62 +1,48 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>这块显卡有点冷</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="这块显卡有点冷">
-  		<meta name="keywords" content="swift ios">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+    <title>这块显卡有点冷</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-diamond"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>这块显卡有点冷</h1>
-								<p>Stay hungry Stay foolish</p>
-							</div>
-						</div>
-						<nav>
+<body class="is-preload">
 
-								<ul >
-									<li><a href="https://segmentfault.com/u/dowhilenet" class="icon fa-book"><span class="label">SegmentFault</span></a></li>
-									<li><a href="https://medium.com/@xiaolei" class="icon fa-medium"><span class="label">Medium</span></a></li>
-									<li><a href="https://twitter.com/1414225Xiaolei" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="http://weibo.com/71414225" class="icon fa-weibo"><span class="label">Weibo</span></a></li>
-									<li><a href="https://github.com/dowhilenet" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-						
-						</nav>
-					</header>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		
+        <!-- Main -->
+        <section id="main">
+            <header>
+                <h1>这块显卡有点冷</h1>
+            </header>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 这块显卡有点冷 <a href="http://dowhile.net">dowhile.net</a>.</p>
-					</footer>
+            <footer>
+                <span><a href="">Blog</a></span> &nbsp;&nbsp;<span><a href="">Github</a></span>
+            </footer>
+        </section>
 
-			</div>
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; DOWHILE NET</li>
+            </ul>
+        </footer>
 
-		<!-- BG -->
-			<div id="bg"></div>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function() {
+                document.body.className = document.body.className.replace(/\bis-preload\b/, '');
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+
+</body>
+
 </html>
